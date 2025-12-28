@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html class="light" lang="kk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Серверлік жабдыққа қызмет көрсету ерекшеліктері</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for sidebar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-white font-display overflow-hidden h-screen flex flex-col">
+<!-- Top Navbar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e5e7eb] dark:border-gray-800 bg-white dark:bg-[#1a202c] px-6 py-3 shrink-0 z-20">
+<div class="flex items-center gap-4 text-[#111318] dark:text-white">
+<div class="size-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[28px]">dns</span>
+</div>
+<div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">IT Department</h2>
+<p class="text-xs text-[#606e8a] dark:text-gray-400 font-medium">Өндірістік практика есебі</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-6">
+<a class="text-[#111318] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Басты бет</a>
+<a class="text-[#111318] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Есептер</a>
+<a class="text-[#111318] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors" href="#">Байланыс</a>
+</div>
+<div class="h-8 w-[1px] bg-[#e5e7eb] dark:bg-gray-700 hidden md:block"></div>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-blue-600 transition-colors shadow-sm shadow-blue-500/20">
+<span class="material-symbols-outlined mr-2 text-[20px]">download</span>
+<span class="truncate">Есепті жүктеу</span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 ring-2 ring-gray-100 dark:ring-gray-700 cursor-pointer" data-alt="Student profile portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDbzr5-rOPtsmURTm9Lv4n2u1oEAU8X11aIGP_y7Lda2CLEnecbWoMrm6otpriWnkdyKoLdAF4FCa1U0rf7yGRT4mDNqdM6h0A0cVN63WIIVV684O1hgvnEy2K2IhnHJ7urJ_6rbtdls9TqNKu4rXhxLxS11ba70gNf6Phxf12Ieb6HoKRPPHP122RvAEUWxh_DqAJfaswMLjPXZ9a3E2TVmnoXudMoHO8QmKUAmN9r2mdjjnyk4SI9wtV2UtPcKcU3Nz5EBRhd_5tr");'></div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden relative">
+<!-- Sidebar Navigation -->
+<aside class="w-72 bg-white dark:bg-[#1a202c] border-r border-[#e5e7eb] dark:border-gray-800 flex flex-col justify-between overflow-y-auto custom-scrollbar shrink-0 hidden lg:flex pb-6">
+<div class="p-5 flex flex-col gap-6">
+<div class="flex flex-col gap-1 px-2">
+<h1 class="text-[#111318] dark:text-white text-base font-bold leading-normal">Мазмұны</h1>
+<p class="text-[#606e8a] dark:text-gray-400 text-xs font-normal">Бөлімдерге жылдам өту</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary transition-all group" href="#hero">
+<span class="material-symbols-outlined">home</span>
+<p class="text-sm font-medium">Кіріспе</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-[#606e8a] dark:text-gray-300 hover:text-[#111318] dark:hover:text-white transition-all group" href="#daily">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">schedule</span>
+<p class="text-sm font-medium">Күнделікті қызмет</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-[#606e8a] dark:text-gray-300 hover:text-[#111318] dark:hover:text-white transition-all group" href="#weekly">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">calendar_month</span>
+<p class="text-sm font-medium">Апталық тексеріс</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-[#606e8a] dark:text-gray-300 hover:text-[#111318] dark:hover:text-white transition-all group" href="#security">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">security</span>
+<p class="text-sm font-medium">Қауіпсіздік</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-[#606e8a] dark:text-gray-300 hover:text-[#111318] dark:hover:text-white transition-all group" href="#backup">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">backup</span>
+<p class="text-sm font-medium">Резервтік көшіру</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-[#606e8a] dark:text-gray-300 hover:text-[#111318] dark:hover:text-white transition-all group" href="#reglament">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">assignment</span>
+<p class="text-sm font-medium">Регламент</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-[#606e8a] dark:text-gray-300 hover:text-[#111318] dark:hover:text-white transition-all group" href="#monitoring">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">analytics</span>
+<p class="text-sm font-medium">Мониторинг</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-[#606e8a] dark:text-gray-300 hover:text-[#111318] dark:hover:text-white transition-all group" href="#documentation">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">description</span>
+<p class="text-sm font-medium">Құжаттама</p>
+</a>
+</nav>
+</div>
+<div class="px-5">
+<div class="bg-background-light dark:bg-gray-800 rounded-xl p-4 border border-[#e5e7eb] dark:border-gray-700">
+<div class="flex items-center gap-3 mb-3">
+<div class="size-8 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg">school</span>
+</div>
+<div>
+<p class="text-xs font-bold text-[#111318] dark:text-white">Практикант</p>
+<p class="text-[10px] text-[#606e8a] dark:text-gray-400">IS-21-2 тобы</p>
+</div>
+</div>
+<p class="text-xs text-[#606e8a] dark:text-gray-400 leading-relaxed mb-3">
+                        Ғылыми жетекші:<br/>
+<span class="font-medium text-[#111318] dark:text-gray-200">Ахметов Б.С.</span>
+</p>
+<button class="w-full h-8 text-xs font-medium text-primary bg-white dark:bg-gray-700 border border-primary/20 rounded-lg hover:bg-primary/5 transition-colors">
+                        Кері байланыс
+                    </button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-black/20 scroll-smooth pb-20">
+<div class="max-w-[1000px] mx-auto px-4 md:px-10 py-8 flex flex-col gap-10">
+<!-- Hero Section -->
+<section class="bg-white dark:bg-[#1a202c] rounded-2xl p-6 md:p-10 shadow-sm border border-[#e5e7eb] dark:border-gray-800" id="hero">
+<div class="flex flex-col-reverse md:flex-row gap-8 items-center">
+<div class="flex flex-col gap-6 flex-1">
+<div class="flex flex-col gap-3">
+<div class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-50 dark:bg-blue-900/30 px-3 py-1 text-xs font-bold text-primary">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                                    Есеп №4
+                                </div>
+<h1 class="text-[#111318] dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">
+                                    Серверлік жабдыққа қызмет көрсету ерекшеліктері
+                                </h1>
+<p class="text-[#606e8a] dark:text-gray-300 text-base leading-relaxed">
+                                    Бұл есепте ұйымның IT-инфрақұрылымының тұрақтылығын қамтамасыз ету әдістері, серверлерді техникалық қолдау және қауіпсіздік шаралары қарастырылған.
+                                </p>
+</div>
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-gray-100 dark:bg-gray-800 rounded-md text-xs font-medium text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                                    Күйі: Тексерілді
+                                </div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-gray-100 dark:bg-gray-800 rounded-md text-xs font-medium text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                                    15.05.2024
+                                </div>
+</div>
+</div>
+<div class="w-full md:w-[350px] aspect-video md:aspect-square bg-cover bg-center rounded-xl shadow-inner relative overflow-hidden group" data-alt="Abstract server rack visualization with blue glowing lights" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDXipcom0StP3NaK1BY2iEL-oq7x-LOUTVeKq3olINDwU3UJmhuURsmqH7eahzAoD_AqmSAKm75mkgng4Cq0AOSe5_cTzAa-9dFUtNUcT7lfwwgAw-bTME7SiiFcrd4M7uEx3OfPXwzPg39vSCIr5Jyqv6w2AraTkWdr53W81fvCUGkwxqAo46IIIeK5WDNhJnh13tAN1Y5jvNX1E8sOqGIcgdoBl1UqiPZWsYgC5vTHHYGZ3fIntGsrkeCxy4IsbU8TSBf7GRUX3gl");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<p class="text-sm font-bold">Data Center A1</p>
+<p class="text-xs opacity-80">Негізгі сервер бөлмесі</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Daily Maintenance Section -->
+<section class="scroll-mt-6" id="daily">
+<div class="flex items-center gap-3 mb-4">
+<div class="bg-white dark:bg-[#1a202c] p-2 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
+<span class="material-symbols-outlined text-primary">schedule</span>
+</div>
+<h2 class="text-[#111318] dark:text-white text-2xl font-bold">Күнделікті қызмет (Daily Maintenance)</h2>
+</div>
+<div class="bg-white dark:bg-[#1a202c] rounded-2xl border border-[#e5e7eb] dark:border-gray-800 overflow-hidden">
+<div class="p-6 md:p-8">
+<p class="text-[#606e8a] dark:text-gray-300 mb-6">Жұмыс күнінің басында жүргізілетін міндетті тексерулер тізімі. Барлық пункттер орындалғаннан кейін журналға тіркелуі тиіс.</p>
+<div class="grid gap-4">
+<label class="flex items-start gap-4 p-4 rounded-xl border border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors cursor-pointer group">
+<input checked="" class="mt-1 h-5 w-5 rounded border-gray-300 border-2 text-primary focus:ring-primary/20" type="checkbox"/>
+<div class="flex flex-col">
+<span class="text-[#111318] dark:text-white font-medium group-hover:text-primary transition-colors">Жүйелік журналдарды (Logs) тексеру</span>
+<span class="text-sm text-[#606e8a] dark:text-gray-400">Error және Warning хабарламаларын Event Viewer арқылы қарау.</span>
+</div>
+</label>
+<label class="flex items-start gap-4 p-4 rounded-xl border border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors cursor-pointer group">
+<input class="mt-1 h-5 w-5 rounded border-gray-300 border-2 text-primary focus:ring-primary/20" type="checkbox"/>
+<div class="flex flex-col">
+<span class="text-[#111318] dark:text-white font-medium group-hover:text-primary transition-colors">Климаттық бақылау</span>
+<span class="text-sm text-[#606e8a] dark:text-gray-400">Сервер бөлмесіндегі температура (18-22°C) мен ылғалдылықты (40-60%) тексеру.</span>
+</div>
+</label>
+<label class="flex items-start gap-4 p-4 rounded-xl border border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors cursor-pointer group">
+<input class="mt-1 h-5 w-5 rounded border-gray-300 border-2 text-primary focus:ring-primary/20" type="checkbox"/>
+<div class="flex flex-col">
+<span class="text-[#111318] dark:text-white font-medium group-hover:text-primary transition-colors">Визуалды индикация</span>
+<span class="text-sm text-[#606e8a] dark:text-gray-400">Серверлер мен желілік жабдықтардағы HDD, PSU статус шамдарын тексеру.</span>
+</div>
+</label>
+<label class="flex items-start gap-4 p-4 rounded-xl border border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors cursor-pointer group">
+<input class="mt-1 h-5 w-5 rounded border-gray-300 border-2 text-primary focus:ring-primary/20" type="checkbox"/>
+<div class="flex flex-col">
+<span class="text-[#111318] dark:text-white font-medium group-hover:text-primary transition-colors">Критикалық қызметтер (Services)</span>
+<span class="text-sm text-[#606e8a] dark:text-gray-400">SQL Server, IIS, Active Directory қызметтерінің "Running" күйінде екенін растау.</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Weekly & Security Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Weekly Checks -->
+<section class="flex flex-col gap-4 scroll-mt-6" id="weekly">
+<div class="flex items-center gap-3">
+<div class="bg-white dark:bg-[#1a202c] p-2 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+</div>
+<h2 class="text-[#111318] dark:text-white text-xl font-bold">Апталық тексеріс</h2>
+</div>
+<div class="bg-white dark:bg-[#1a202c] flex-1 rounded-2xl border border-[#e5e7eb] dark:border-gray-800 p-6">
+<ul class="flex flex-col gap-4">
+<li class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400">hard_drive</span>
+</div>
+<div>
+<p class="font-medium text-[#111318] dark:text-white">Дискілік кеңістік</p>
+<p class="text-xs text-[#606e8a] dark:text-gray-400">Бос орын 20%-дан төмендемеуі тиіс</p>
+</div>
+</li>
+<li class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-orange-600 dark:text-orange-400">update</span>
+</div>
+<div>
+<p class="font-medium text-[#111318] dark:text-white">Жаңартуларды тексеру</p>
+<p class="text-xs text-[#606e8a] dark:text-gray-400">OS және Firmware жаңартулары</p>
+</div>
+</li>
+<li class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-purple-600 dark:text-purple-400">bug_report</span>
+</div>
+<div>
+<p class="font-medium text-[#111318] dark:text-white">Антивирус базасы</p>
+<p class="text-xs text-[#606e8a] dark:text-gray-400">Соңғы жаңартылған күнін тексеру</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<!-- Security Section -->
+<section class="flex flex-col gap-4 scroll-mt-6" id="security">
+<div class="flex items-center gap-3">
+<div class="bg-white dark:bg-[#1a202c] p-2 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
+<span class="material-symbols-outlined text-primary">security</span>
+</div>
+<h2 class="text-[#111318] dark:text-white text-xl font-bold">Қауіпсіздік</h2>
+</div>
+<div class="bg-white dark:bg-[#1a202c] flex-1 rounded-2xl border border-[#e5e7eb] dark:border-gray-800 p-6 relative overflow-hidden">
+<!-- Background decoration -->
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
+<div class="flex flex-col gap-4">
+<div class="p-3 bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-900/50 rounded-lg">
+<div class="flex items-center gap-2 text-red-700 dark:text-red-400 font-bold text-sm mb-1">
+<span class="material-symbols-outlined text-lg">warning</span>
+                                        Басым бағыттар
+                                    </div>
+<p class="text-xs text-red-600/80 dark:text-red-400/80">Firewall ережелерін ай сайын аудиттеу қажет.</p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-sm border-b border-gray-100 dark:border-gray-700 pb-2">
+<span class="text-[#606e8a] dark:text-gray-400">Пароль саясаты</span>
+<span class="text-[#111318] dark:text-white font-medium">90 күн сайын</span>
+</div>
+<div class="flex justify-between items-center text-sm border-b border-gray-100 dark:border-gray-700 pb-2">
+<span class="text-[#606e8a] dark:text-gray-400">Access Control</span>
+<span class="text-[#111318] dark:text-white font-medium">Рұқсаттарды шектеу</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-[#606e8a] dark:text-gray-400">VPN қолжетімділік</span>
+<span class="text-[#111318] dark:text-white font-medium">2FA міндетті</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Backup Section -->
+<section class="scroll-mt-6" id="backup">
+<div class="flex items-center gap-3 mb-4">
+<div class="bg-white dark:bg-[#1a202c] p-2 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
+<span class="material-symbols-outlined text-primary">backup</span>
+</div>
+<h2 class="text-[#111318] dark:text-white text-2xl font-bold">Резервтік көшіру (Backup Strategy)</h2>
+</div>
+<div class="bg-[#101622] rounded-2xl p-6 md:p-10 text-white relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-blue-900/40 to-transparent"></div>
+<div class="relative z-10 flex flex-col md:flex-row gap-10">
+<div class="flex-1 space-y-6">
+<div>
+<h3 class="text-xl font-bold mb-2">3-2-1 Ережесі</h3>
+<p class="text-gray-300 text-sm leading-relaxed">Деректердің жоғалуын болдырмау үшін алтын стандарт: 3 көшірме, 2 түрлі тасымалдаушы, 1 офлайн көшірме.</p>
+</div>
+<div class="flex gap-4">
+<div class="flex-1 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:bg-white/15 transition-colors">
+<div class="text-primary font-black text-2xl mb-1">Full</div>
+<div class="text-xs text-gray-300 uppercase tracking-wider font-bold mb-2">Backup</div>
+<p class="text-xs text-gray-400">Аптасына бір рет (Жексенбі). Толық жүйені көшіру.</p>
+</div>
+<div class="flex-1 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:bg-white/15 transition-colors">
+<div class="text-blue-300 font-black text-2xl mb-1">Inc</div>
+<div class="text-xs text-gray-300 uppercase tracking-wider font-bold mb-2">Incremental</div>
+<p class="text-xs text-gray-400">Күнделікті (Түнде). Өзгерген файлдар ғана.</p>
+</div>
+</div>
+</div>
+<div class="flex-1 bg-black/30 rounded-xl p-6 border border-white/10">
+<h4 class="font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-green-400">check_circle</span>
+                                    Backup Schedule
+                                </h4>
+<div class="space-y-3">
+<div class="flex items-center gap-3 text-sm">
+<span class="w-16 font-mono text-gray-400">22:00</span>
+<div class="h-1.5 flex-1 bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full w-full bg-primary"></div>
+</div>
+<span class="text-xs">SQL DB</span>
+</div>
+<div class="flex items-center gap-3 text-sm">
+<span class="w-16 font-mono text-gray-400">01:00</span>
+<div class="h-1.5 flex-1 bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full w-3/4 bg-blue-400"></div>
+</div>
+<span class="text-xs">File Server</span>
+</div>
+<div class="flex items-center gap-3 text-sm">
+<span class="w-16 font-mono text-gray-400">04:00</span>
+<div class="h-1.5 flex-1 bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full w-1/2 bg-purple-400"></div>
+</div>
+<span class="text-xs">VM Images</span>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-white/10 flex justify-between items-center">
+<span class="text-xs text-gray-400">Соңғы сәтті көшірме:</span>
+<span class="text-xs font-mono text-green-400 bg-green-900/30 px-2 py-1 rounded">Today, 04:45 AM</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Regulations Table -->
+<section class="scroll-mt-6" id="reglament">
+<div class="flex items-center gap-3 mb-4">
+<div class="bg-white dark:bg-[#1a202c] p-2 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
+<span class="material-symbols-outlined text-primary">assignment</span>
+</div>
+<h2 class="text-[#111318] dark:text-white text-2xl font-bold">Қызмет көрсету регламенті</h2>
+</div>
+<div class="overflow-hidden rounded-2xl border border-[#e5e7eb] dark:border-gray-800 bg-white dark:bg-[#1a202c]">
+<table class="w-full text-sm text-left">
+<thead class="bg-gray-50 dark:bg-gray-800/50 text-[#111318] dark:text-gray-200 font-bold border-b border-[#e5e7eb] dark:border-gray-800">
+<tr>
+<th class="px-6 py-4">Міндет</th>
+<th class="px-6 py-4">Жиілік</th>
+<th class="px-6 py-4">Жауапты тұлға</th>
+<th class="px-6 py-4">Маңыздылық</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#e5e7eb] dark:divide-gray-800">
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<td class="px-6 py-4 font-medium text-[#111318] dark:text-white">Серверлерді визуалды тексеру</td>
+<td class="px-6 py-4 text-[#606e8a] dark:text-gray-400">Күнделікті (09:00)</td>
+<td class="px-6 py-4 text-[#606e8a] dark:text-gray-400">Кезекші инженер</td>
+<td class="px-6 py-4"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">Орташа</span></td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<td class="px-6 py-4 font-medium text-[#111318] dark:text-white">Резервтік көшірмелерді тексеру</td>
+<td class="px-6 py-4 text-[#606e8a] dark:text-gray-400">Күнделікті (10:00)</td>
+<td class="px-6 py-4 text-[#606e8a] dark:text-gray-400">Системалық администратор</td>
+<td class="px-6 py-4"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300">Жоғары</span></td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<td class="px-6 py-4 font-medium text-[#111318] dark:text-white">Серверлерді шаңнан тазалау</td>
+<td class="px-6 py-4 text-[#606e8a] dark:text-gray-400">Ай сайын (1-ші жұлдыз)</td>
+<td class="px-6 py-4 text-[#606e8a] dark:text-gray-400">Техникалық персонал</td>
+<td class="px-6 py-4"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300">Төмен</span></td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<td class="px-6 py-4 font-medium text-[#111318] dark:text-white">UPS батареяларын тестілеу</td>
+<td class="px-6 py-4 text-[#606e8a] dark:text-gray-400">Тоқсан сайын</td>
+<td class="px-6 py-4 text-[#606e8a] dark:text-gray-400">Энергетик / Админ</td>
+<td class="px-6 py-4"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300">Жоғары</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<footer class="mt-10 pt-10 border-t border-[#e5e7eb] dark:border-gray-800 text-center text-[#606e8a] dark:text-gray-500 pb-10">
+<p class="mb-2">© 2024 Өндірістік практика есебі. Барлық құқықтар қорғалған.</p>
+<p class="text-xs">Серверлік жабдықтарды пайдалану және қызмет көрсету нұсқаулығы негізінде жасалды.</p>
+</footer>
+</div>
+</main>
+</div>
+</body></html>
