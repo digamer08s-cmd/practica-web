@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="kk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Серверлік жабдықтар мен желілік құрылғылар</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-white font-display overflow-x-hidden">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-[#f0f1f5] dark:border-gray-800 px-4 py-3">
+<div class="layout-container flex justify-center w-full">
+<div class="max-w-[1200px] flex-1 flex items-center justify-between">
+<div class="flex items-center gap-4 text-[#111318] dark:text-white">
+<div class="size-8 flex items-center justify-center bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">dns</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Өндірістік практика</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<div class="flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Басты бет</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#servers">Серверлер</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#network">Желілік құрылғылар</a>
+</div>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold shadow-md hover:bg-primary/90 transition-colors">
+<span class="truncate">Жүктеу</span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-9 border border-gray-200" data-alt="Student profile placeholder avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBCfWNdMlVECjo7BHA72x8GnESN7dhe2yz6FeeJRCUWGhSl3M7f817LSTKEgflP7GSnbvfCbUEVIEpv4547aRV2gYhToEmGmZxYJdTih5ZuXYG1egUu29Z3oH7QfGL6CZquJUCA7_SpSLi9DzUgMotMnQD8c48BFnGVdlcMkMbWJZMgKzNVggazATKog0_zDEER0UYO7edINoWPzIPGvOB5-SzmdVRN4-VHGZOxi-ZGeHqkJ65Z9wlYx534MjSdb4HjtcUuxbZp_6Hx");'></div>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-[#111318] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<div class="w-full bg-white dark:bg-background-dark py-6 md:py-10">
+<div class="layout-container flex justify-center">
+<div class="max-w-[1200px] w-full px-4">
+<div class="relative overflow-hidden rounded-2xl min-h-[400px] flex flex-col items-center justify-center text-center p-8 bg-cover bg-center shadow-xl" data-alt="Abstract blue technology background showing server lights and data flow" style='background-image: linear-gradient(rgba(16, 22, 34, 0.7), rgba(16, 22, 34, 0.8)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuB-184Jr2YlaStHY0QbCwHmmR6LJbtSo2ID6p8moU8IznNhsK-xtEm6UvNflBYmCbKBwX9TStpBpXqRQqODGeoFdj_52Vji0_GuZ2UB_gpzzcutXfm49TwgSccWHxd6MrICigI4FSfhT_XKZpHwS4U9HR7EQ4Kojlkzj4wMEoJas8Apo_2ihL8ml7NZyV6R6ehotgIldix5UPo9D23mN01sZQEVtpvxndgk180d_g0AdRIb0YLqDIDYgucITi_C-gqT0tLjeSIUKW6R");'>
+<div class="max-w-3xl flex flex-col gap-4 z-10">
+<span class="text-primary font-bold tracking-wider text-sm uppercase bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full w-fit mx-auto border border-white/20">IT Инфрақұрылым</span>
+<h1 class="text-white text-3xl md:text-5xl font-black leading-tight tracking-tight">
+                                Серверлік жабдықтар мен желілік құрылғылар
+                            </h1>
+<p class="text-gray-200 text-base md:text-lg font-normal leading-relaxed max-w-2xl mx-auto">
+                                Ұйымның ақпараттық инфрақұрылымына арналған техникалық шолу. Rack, Tower, Blade серверлері және желілік коммутация негіздері.
+                            </p>
+<div class="pt-4 flex justify-center gap-4">
+<button class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30">
+                                    Толығырақ оқу
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Segmented Control / Filter -->
+<div class="sticky top-[65px] z-40 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm py-4 border-b border-gray-200 dark:border-gray-800">
+<div class="layout-container flex justify-center">
+<div class="max-w-[1200px] w-full px-4 flex justify-center">
+<div class="flex h-12 w-full max-w-[500px] items-center justify-center rounded-xl bg-gray-200 dark:bg-gray-800 p-1">
+<label class="flex-1 cursor-pointer h-full flex items-center justify-center rounded-lg px-4 transition-all has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-primary font-medium text-gray-500 dark:text-gray-400">
+<span class="mr-2 material-symbols-outlined text-[20px]">dns</span>
+<span class="truncate">Серверлік жабдықтар</span>
+<input checked="" class="invisible w-0 absolute" name="view-toggle" type="radio" value="servers"/>
+</label>
+<label class="flex-1 cursor-pointer h-full flex items-center justify-center rounded-lg px-4 transition-all has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-primary font-medium text-gray-500 dark:text-gray-400">
+<span class="mr-2 material-symbols-outlined text-[20px]">hub</span>
+<span class="truncate">Желілік құрылғылар</span>
+<input class="invisible w-0 absolute" name="view-toggle" type="radio" value="network"/>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<main class="flex-1 py-8">
+<div class="layout-container flex justify-center">
+<div class="max-w-[1000px] w-full px-4 flex flex-col gap-12">
+<!-- Section: Servers -->
+<section class="scroll-mt-28" id="servers">
+<div class="flex items-center gap-3 pb-6 border-b border-gray-200 dark:border-gray-800 mb-6">
+<div class="p-2 bg-blue-100 dark:bg-blue-900/30 text-primary rounded-lg">
+<span class="material-symbols-outlined block">storage</span>
+</div>
+<h2 class="text-2xl font-bold tracking-tight text-[#111318] dark:text-white">Сервер түрлері (Server Types)</h2>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Card: Rack Server -->
+<div class="group bg-white dark:bg-gray-800 rounded-xl p-4 shadow-sm hover:shadow-md transition-all border border-gray-100 dark:border-gray-700 flex flex-col md:flex-row gap-6">
+<div class="w-full md:w-64 h-48 md:h-auto shrink-0 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Rack server mounted in a data center cabinet" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBCoEgJlO7w22VbjrdTD1zxAs4yTr5IbPjQ4pmIXynLKPCIiCKQNvnirH1HLpc1Lcrn6NRYtFto32BEwHqy0Fn8_8NWh5zVzAzsbBDuXv6FO5UVoYWkD5rP4pcoKgA1ykrgnnsJdDdZpCqL2lKunIt8tFvilYYMDqHp59LSnJYdp1c5QXXSwqAGCo4mKUDSXB9bTHWExn5qRmLn3TYpejpUwgoVm56XBGi28YyxHNKS52JlKE4tUMUVZpR-hNynyA02YrLRLnlxUCTv");'>
+</div>
+</div>
+<div class="flex flex-col flex-1 justify-center py-2">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-[#111318] dark:text-white">Rack Server (Сөрелік сервер)</h3>
+<span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Кең таралған</span>
+</div>
+<p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                                        Стандартты 19 дюймдік сөрелерге (rack) орнатуға арналған ықшам, жоғары өнімді серверлер. Деректер орталықтары үшін өте қолайлы.
+                                    </p>
+<ul class="text-sm text-gray-500 dark:text-gray-400 space-y-2 mb-5">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                            Кеңістікті үнемдейді (U өлшемімен өлшенеді)
+                                        </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                            Кабельдерді басқару ыңғайлы
+                                        </li>
+</ul>
+<div class="mt-auto">
+<button class="text-primary font-bold text-sm hover:underline flex items-center gap-1">
+                                            Толығырақ сипаттамасы <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card: Tower Server -->
+<div class="group bg-white dark:bg-gray-800 rounded-xl p-4 shadow-sm hover:shadow-md transition-all border border-gray-100 dark:border-gray-700 flex flex-col md:flex-row gap-6">
+<div class="w-full md:w-64 h-48 md:h-auto shrink-0 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Tower server standing on a desk like a PC case" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXUd9w9Bav7HySeo44fp0L098TR2uzCcZt-SSUFQ53g6KdA-KuW6F31nVvxcd1KLydE9WodrEarCViOGbQ1gC_yD66ZZZIdBSlWTebCQpmgDbRihWQTo7PdwU8hY76DiN5F5lP0iWdi8dg-eKkU1s3ZluEXoj67sFgTTpWrDN09blYBJc7rm36h-OzYAfFVeyOceq7AEHZ98aIPt5yxfNKKOo6F1b5t7Imu0-xtBPVy9mXdUVSgAWzawZiHSF3jPHWUWGf0bIRG_xF");'>
+</div>
+</div>
+<div class="flex flex-col flex-1 justify-center py-2">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-[#111318] dark:text-white">Tower Server (Мұнаралық сервер)</h3>
+</div>
+<p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                                        Дербес компьютер корпусына ұқсас жеке тұрған серверлер. Шағын кәсіпорындар мен кеңселерге арналған.
+                                    </p>
+<ul class="text-sm text-gray-500 dark:text-gray-400 space-y-2 mb-5">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                            Орнату оңай, арнайы бөлме қажет емес
+                                        </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                            Салқындату жүйесі тиімді
+                                        </li>
+</ul>
+<div class="mt-auto">
+<button class="text-primary font-bold text-sm hover:underline flex items-center gap-1">
+                                            Толығырақ сипаттамасы <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card: Blade Server -->
+<div class="group bg-white dark:bg-gray-800 rounded-xl p-4 shadow-sm hover:shadow-md transition-all border border-gray-100 dark:border-gray-700 flex flex-col md:flex-row gap-6">
+<div class="w-full md:w-64 h-48 md:h-auto shrink-0 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Close up of blade servers inserted into a chassis" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB66aBkgH5PFJL0cKKl7R1xx5sSJV69Kab7BXNDdAvX_LsXgdtLxfX3q_mVxcWa8ZVRxZ9LqCXe6sGprb2t3c4AqP8K_hWfSDNkPJppJ-3VqmJgGpGkpqSjZ2ffhS_A4HMJFFm_QAGXJ9Eq1h74xAkl-OAbArCqPPjoard7dxMXBfJluuleA0nNcoEowff1qatynOjm_8FP4EM54r8SDgus94ISJSJ20_2GMU1lsanAbVezSw2SctFgXMd0Kq9imIGaqJSx6lCbbG7_");'>
+</div>
+</div>
+<div class="flex flex-col flex-1 justify-center py-2">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-[#111318] dark:text-white">Blade Server (Блейд сервер)</h3>
+<span class="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Жоғары қуат</span>
+</div>
+<p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                                        Жоғары тығыздықты және ортақ қоректендіру жүйесі бар модульдік серверлер. Ірі компаниялар үшін тиімді шешім.
+                                    </p>
+<ul class="text-sm text-gray-500 dark:text-gray-400 space-y-2 mb-5">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                            Модульдік архитектура және hot-swap мүмкіндігі
+                                        </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                                            Энергияны үнемдеу
+                                        </li>
+</ul>
+<div class="mt-auto">
+<button class="text-primary font-bold text-sm hover:underline flex items-center gap-1">
+                                            Толығырақ сипаттамасы <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Network Devices -->
+<section class="scroll-mt-28" id="network">
+<div class="flex items-center gap-3 pb-6 border-b border-gray-200 dark:border-gray-800 mb-6 mt-4">
+<div class="p-2 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-lg">
+<span class="material-symbols-outlined block">router</span>
+</div>
+<h2 class="text-2xl font-bold tracking-tight text-[#111318] dark:text-white">Желілік құрылғылар (Network Devices)</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card: Switch -->
+<div class="flex flex-col bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-gray-700">
+<div class="h-48 bg-gray-100 dark:bg-gray-900 bg-cover bg-center" data-alt="Network switch with many ethernet ports and cables connected" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClLe6gjQ7uk6qJ36H51VvZUI6o3XQZvUziJT76XhQ0mucaQlj4q67BRR8ym10bC-0xHUR-oktMedjvzZB3dI2HRCwsCP-_9fA57jt7fvSnmrS49emFiYNmCgyArBeNvWbpqbroAViXivg8HTBnoxz4DGWaTV5MMtqd9flK1VzdkKOxMFtNGlPE7MuJyd1n9M2tMa72EjasLX7mu6pCIs87WMvvhSB3ee5vhECEgcOErfF-9csDDhOVBSL_fwCXLgMa6V987kpYfz1r");'>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-[#111318] dark:text-white mb-2">Switch (Коммутатор)</h3>
+<p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                                        Жергілікті желідегі (LAN) құрылғыларды бір-бірімен байланыстыратын және деректер пакеттерін адресатқа жеткізетін құрылғы.
+                                    </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex justify-between items-center">
+<span class="text-xs font-medium text-gray-400 uppercase">OSI L2/L3</span>
+<button class="bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400 p-2 rounded-full hover:bg-indigo-100 transition-colors">
+<span class="material-symbols-outlined text-[20px] block">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card: Router -->
+<div class="flex flex-col bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-gray-700">
+<div class="h-48 bg-gray-100 dark:bg-gray-900 bg-cover bg-center" data-alt="Enterprise grade router device" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA7BXbymZvUvK7FjorkxcusIYJA4tEINDsgnPaL28Ek-8LC3joEaqukOLzHsUv23P_2PFZGKF0WyAIudHQJH-Gkm6v_EmMxtZbOtm_hTDATXe1KTlxkX32O561aqOjjLaF4Dp7A_h1O2W7PwpSM72qgIKfEKn7WuioEMrG1ydYd0BX3Uy52iwXr_pdauIoNg1U102-0J2aCpJUBU0CfunBNCaTURXdr7QYOtzZXgkXO-WYNmdmCBOyEQg5h8luQ0Z25BZs66iw7rsHQ");'>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-[#111318] dark:text-white mb-2">Router (Маршрутизатор)</h3>
+<p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                                        Әртүрлі компьютерлік желілер арасында деректер пакеттерін бағыттайтын құрылғы. Интернетке қосылу үшін негізгі компонент.
+                                    </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex justify-between items-center">
+<span class="text-xs font-medium text-gray-400 uppercase">OSI L3</span>
+<button class="bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400 p-2 rounded-full hover:bg-indigo-100 transition-colors">
+<span class="material-symbols-outlined text-[20px] block">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card: Firewall -->
+<div class="flex flex-col bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-gray-100 dark:border-gray-700">
+<div class="h-48 bg-gray-100 dark:bg-gray-900 bg-cover bg-center" data-alt="Conceptual image of digital security shield or firewall interface" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBfZOKFfK4Fka0UQ7Tho6GA-lL39Sm6tdz2G_rMaAI2g2bde1hyytuLtAEVVrZH45iX2qBbUE64gnq3wiNPE3U6ZGTw47ErmDEuqZExNRWsYBwLrRqpPXZszn3QaNwUjgT1M7Vd6k4cByv-zzdeUc0DfoGuka7oBASdPE4OioBR0xclNTYxUKn3bmmm74VTpOCkaS6CpanKEGre8CGwT88MZ0nuXcGf9dVSbWwiAkRb__BIFFQ9sBr7pHIJUS3Dtm_gUGBUL53ZirSu");'>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-[#111318] dark:text-white mb-2">Firewall (Желіаралық қалқан)</h3>
+<p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                                        Кіріс және шығыс желілік трафикті бақылайтын және сүзгілейтін қауіпсіздік құрылғысы. Кибершабуылдардан қорғайды.
+                                    </p>
+<div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex justify-between items-center">
+<span class="text-xs font-medium text-gray-400 uppercase">Security</span>
+<button class="bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400 p-2 rounded-full hover:bg-indigo-100 transition-colors">
+<span class="material-symbols-outlined text-[20px] block">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 mt-12 py-10">
+<div class="layout-container flex justify-center">
+<div class="max-w-[1000px] w-full px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3">
+<div class="size-10 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full text-gray-500">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#111318] dark:text-white">Өндірістік практика есебі</span>
+<span class="text-xs text-gray-500">2024 Оқу жылы</span>
+</div>
+</div>
+<div class="flex flex-col items-center md:items-end text-center md:text-right">
+<p class="text-sm text-gray-600 dark:text-gray-400">Орындаған: <span class="font-medium text-[#111318] dark:text-white">Студент Аты-жөні</span></p>
+<p class="text-xs text-gray-500">Тобы: IT-2021</p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
