@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="light" lang="kk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Серверлік жабдыққа қызмет көрсету</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;900&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-white antialiased overflow-x-hidden flex flex-col min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="bg-white dark:bg-[#1a202c] border-b border-[#f0f1f5] dark:border-[#2d3748] sticky top-0 z-50">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Logo & Title -->
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-2xl">dns</span>
+</div>
+<span class="text-lg font-bold tracking-tight text-[#111318] dark:text-white hidden sm:block">
+                        Server Maintenance
+                    </span>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-[#111318] dark:text-gray-200 hover:text-primary transition-colors" href="#">Басты бет</a>
+<a class="text-sm font-medium text-[#111318] dark:text-gray-200 hover:text-primary transition-colors" href="#types">Сервер түрлері</a>
+<a class="text-sm font-medium text-[#111318] dark:text-gray-200 hover:text-primary transition-colors" href="#regulations">Регламент</a>
+<a class="text-sm font-medium text-[#111318] dark:text-gray-200 hover:text-primary transition-colors" href="#">Біз туралы</a>
+</nav>
+<!-- Action Button -->
+<div class="flex items-center">
+<button class="flex items-center justify-center h-10 px-5 rounded-lg bg-primary hover:bg-blue-600 text-white text-sm font-bold transition-colors shadow-sm">
+                        Кіру
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Wrapper -->
+<main class="flex-grow flex flex-col items-center w-full">
+<!-- Hero Section -->
+<section class="w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+<div class="relative overflow-hidden rounded-2xl bg-cover bg-center bg-no-repeat min-h-[400px] md:min-h-[500px] flex items-end p-8 md:p-12 shadow-lg group" data-alt="Modern server room with blue LED lights indicating data processing" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.7) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdnKsvDVPHN3L8g2xlOpGfjg3Tuxn0GPTdCkTbs0LMzgfiRNrKO0WqsNHVFB57yqte76iN3WVVBRu5D8F2dupQU_KYYT6jFXIWPwLckgMYmrqFuQyjH56QJngIhjMbXe91H2iv74Ck7jYJs-wGSmVRMRUrfaZbegd9kFWgbbP7nCbI7tcI24Yg6YyLWYRCC_UfHMIv9rXzCZlGVAI8Q1B9wwOR-lzMX9jZQpgtZjA5dH1ZeX8jgwtUmzmUsH3bHfNcgjtGDNoZO6WQ");'>
+<div class="relative z-10 w-full max-w-2xl flex flex-col gap-4 text-left animate-fade-in-up">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/10 w-fit">
+<span class="w-2 h-2 rounded-full bg-green-400"></span>
+<span class="text-xs font-medium text-white uppercase tracking-wider">Өндірістік практика</span>
+</div>
+<h1 class="text-white text-3xl md:text-5xl font-black leading-tight tracking-tight">
+                        Серверлік жабдыққа<br/>қызмет көрсету
+                    </h1>
+<p class="text-gray-200 text-sm md:text-lg font-normal leading-relaxed max-w-xl">
+                        Ұйымның IT инфрақұрылымын қолдау, серверлерді баптау және ақауларды жою әдістемелеріне арналған ақпараттық портал.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-2">
+<button class="flex items-center justify-center h-12 px-6 rounded-lg bg-primary hover:bg-blue-600 text-white text-base font-bold transition-transform active:scale-95 shadow-lg shadow-blue-500/30">
+                            Толығырақ оқу
+                        </button>
+<button class="flex items-center justify-center h-12 px-6 rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 text-base font-medium transition-colors">
+                            Құжаттаманы жүктеу
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Server Types Section -->
+<section class="w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 py-10 md:py-16" id="types">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+<div class="max-w-2xl">
+<h2 class="text-[#111318] dark:text-white text-3xl font-bold leading-tight mb-3">Серверлердің негізгі түрлері</h2>
+<p class="text-slate-500 dark:text-slate-400 text-lg">Заманауи IT жүйелерінде қолданылатын негізгі серверлік шешімдерге шолу.</p>
+</div>
+<div class="hidden md:block">
+<button class="text-primary font-bold hover:underline inline-flex items-center gap-1">
+                        Барлығын көру <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1: Web Server -->
+<div class="flex flex-col bg-white dark:bg-[#1a202c] rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-md transition-shadow h-full">
+<div class="h-48 bg-cover bg-center" data-alt="Abstract visualization of web connections and nodes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCg6dapKo38SUsI27C2fZtIxqx70y61VHIccLBBCcLci-2nXbGVgK1x3A4ctal2_lGfxxx-lOCnsqA_0nUg9R8djuCzR0PzcMJwnoxwzwPttrnpHLWrvglyBMEPOphNxW39jkzgG0C7OM7sxn_yJJIZOdhxvZCfU0B6ikqCkCk9AZgXn3SFILO5VKcb6mLazD5uCmPsZ5wbw8P0_zU9nC2sXkq-8ruzoPwSuI-VjLCIMbOqgMkg0JSaOxclAodlJkWEQuXcln9pW1ts");'></div>
+<div class="p-6 flex flex-col flex-1">
+<div class="mb-4 size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">language</span>
+</div>
+<h3 class="text-xl font-bold text-[#111318] dark:text-white mb-2">Веб-сервер (Web Server)</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4 flex-1">
+                            Веб-сайттар мен қосымшаларды хостингтеуге арналған. HTTP/HTTPS сұрауларын өңдейді және клиенттерге контентті жеткізеді.
+                        </p>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+<span class="inline-flex items-center text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded">Apache / Nginx</span>
+</div>
+</div>
+</div>
+<!-- Card 2: File Server -->
+<div class="flex flex-col bg-white dark:bg-[#1a202c] rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-md transition-shadow h-full">
+<div class="h-48 bg-cover bg-center" data-alt="Close up of hard drive storage arrays" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB9OtChqLJSCMyklHJzj7RccjOv2lWWm9dRw2LS24UsVmXVDpU8hmrXoqXb4pbWl0z9ZBZtr8s5j0-fY0RtiEefXH8vioJtbGAiVnbXY3c48o7t6KQ4MOL1Q_FQDdqovOxN7j5DBCGIdaP6GozvMm28Hrq0mW9rz8dKRbentDMCQEZBIivdDQ5lRw89sJMNWVDgl4YdV97Me8ogWqSq381OR1pQbVOoO0oidk4wg8kJRENrqcsqoglXDzHwYm5soLwKu-lnB09-tqQn");'></div>
+<div class="p-6 flex flex-col flex-1">
+<div class="mb-4 size-12 rounded-lg bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined text-3xl">folder_shared</span>
+</div>
+<h3 class="text-xl font-bold text-[#111318] dark:text-white mb-2">Файл сервері (File Server)</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4 flex-1">
+                            Желідегі файлдарды орталықтандырылған сақтау және басқару. Қолжетімділік пен қауіпсіздікті қамтамасыз етеді.
+                        </p>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+<span class="inline-flex items-center text-xs font-semibold text-green-600 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded">FTP / SMB</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Mail Server -->
+<div class="flex flex-col bg-white dark:bg-[#1a202c] rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-md transition-shadow h-full">
+<div class="h-48 bg-cover bg-center" data-alt="Digital representation of email communication network" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD9nY0CJEHPL8x2AcPKWKDtpsUi7ASI9XLnJPuYvGEsMTP24RuzpPs3vByOr0m8pVnmQ7t-fNWqzS-YB328oJDoUhs4shgxw9mpUjEJSZgu3hKj8kzhVSYLVxTV4eBOpq8UCQ9Cm_n0syeOQ7EVqk7jj2cAjij3WMIXpUqIc9kx4icbJz3LN83rz8GdFklptMDkV_OsCI25QFA1eF9HqaE5XHd4yZmtHjXrQa44k-T7adBBrHNs8TcQdYHMd1rgGpOHhfrIEZI-3RTC");'></div>
+<div class="p-6 flex flex-col flex-1">
+<div class="mb-4 size-12 rounded-lg bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center text-indigo-600">
+<span class="material-symbols-outlined text-3xl">mail</span>
+</div>
+<h3 class="text-xl font-bold text-[#111318] dark:text-white mb-2">Пошта сервері (Mail Server)</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4 flex-1">
+                            Электрондық пошта хабарламаларын қабылдауға, жіберуге және сақтауға жауапты инфрақұрылым элементі.
+                        </p>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+<span class="inline-flex items-center text-xs font-semibold text-indigo-600 bg-indigo-100 dark:bg-indigo-900/30 px-2 py-1 rounded">SMTP / IMAP / POP3</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Game Server -->
+<div class="flex flex-col bg-white dark:bg-[#1a202c] rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-md transition-shadow h-full">
+<div class="h-48 bg-cover bg-center" data-alt="Abstract geometric shapes representing digital gaming world" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSdHjVZNTJ-vdYpD7QHaYvt3N1NOXmVW90Bhgopkz1zxeHmKwVhjxXA-UF0Eo8CIOoPtBKsjun6spz9izwqZoXVuIL_g8BD3LFxApdMwDsM8c8ot1EY9XPQBEUkgLWo7DX6vga8WYJliSYvo5aOxQQQWEPdWfnmxAIvM-CsLAhf2vw7hl_X_JFlTIXkvXfcQXbasKv5o771PUxx90OItlsbrpbT5MZ0dpip_xP95rbJMZj6MDJu70sQrGtfW6kV95cEDf84cGjzfYs");'></div>
+<div class="p-6 flex flex-col flex-1">
+<div class="mb-4 size-12 rounded-lg bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600">
+<span class="material-symbols-outlined text-3xl">sports_esports</span>
+</div>
+<h3 class="text-xl font-bold text-[#111318] dark:text-white mb-2">Ойын сервері (Game Server)</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4 flex-1">
+                            Көп ойыншыға арналған бейне ойындардағы клиенттер арасындағы деректерді нақты уақытта синхрондау.
+                        </p>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+<span class="inline-flex items-center text-xs font-semibold text-purple-600 bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">Real-time / Low Latency</span>
+</div>
+</div>
+</div>
+<!-- Card 5: Video Server -->
+<div class="flex flex-col bg-white dark:bg-[#1a202c] rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-md transition-shadow h-full md:col-span-2 lg:col-span-2">
+<div class="flex flex-col md:flex-row h-full">
+<div class="h-48 md:h-auto md:w-2/5 bg-cover bg-center" data-alt="Streaming media conceptual background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDTo7hO5fbUDhwfedTgwymVJL8PloVjl3wGfnKzryjtmgAYhpXZ2IVzjyyQ5938j0J3Dr4vNzCiRTMQlxlHjYFOZkEfqEZahYqgfJoOiJ0A7ZDSrI1Efh2L8hAwaew_pCDhu03UEPOgX88r1w_68Y1kKc5lF6NC0kPWw4hh2HcpGnOoGStHUuYVs4SxNEUDKA03VD7aPDO1kq6nAuD8WHCv9YZMqrGDZG-B_M_uyeCoc-27bhKiIBzL8rDEXoDYm1-lHHem4NnB1DmG");'></div>
+<div class="p-6 flex flex-col flex-1 justify-center">
+<div class="mb-4 size-12 rounded-lg bg-red-50 dark:bg-red-900/20 flex items-center justify-center text-red-600">
+<span class="material-symbols-outlined text-3xl">play_circle</span>
+</div>
+<h3 class="text-xl font-bold text-[#111318] dark:text-white mb-2">Видео сервері (Video Streaming)</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                Бейне контентті сақтау және ағындық (streaming) тарату қызметтерін ұсынады. Жоғары өткізу қабілеті мен тұрақтылықты қажет етеді.
+                            </p>
+<div class="flex gap-2">
+<span class="inline-flex items-center text-xs font-semibold text-red-600 bg-red-100 dark:bg-red-900/30 px-2 py-1 rounded">CDN</span>
+<span class="inline-flex items-center text-xs font-semibold text-red-600 bg-red-100 dark:bg-red-900/30 px-2 py-1 rounded">Transcoding</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Maintenance Regulations Section -->
+<section class="w-full bg-white dark:bg-[#1a202c] border-y border-slate-100 dark:border-slate-800 py-16" id="regulations">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-[#111318] dark:text-white text-3xl font-bold mb-4">Техникалық қызмет көрсету регламенті</h2>
+<p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
+                        Серверлердің үздіксіз жұмысын қамтамасыз ету үшін келесі профилактикалық шаралар кестесін сақтау қажет.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Daily -->
+<div class="relative group">
+<div class="absolute -inset-0.5 bg-gradient-to-r from-blue-300 to-primary rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-200"></div>
+<div class="relative p-6 bg-white dark:bg-[#151a23] rounded-lg h-full flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-lg">Күнделікті</h3>
+<span class="material-symbols-outlined text-blue-400">schedule</span>
+</div>
+<ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300 flex-1">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+<span>Жүйелік логтарды қарау</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+<span>Резервтік көшірме (Backup)</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+<span>Қауіпсіздік мониторингі</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Weekly -->
+<div class="relative group">
+<div class="absolute -inset-0.5 bg-gradient-to-r from-blue-300 to-primary rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-200"></div>
+<div class="relative p-6 bg-white dark:bg-[#151a23] rounded-lg h-full flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-lg">Апталық</h3>
+<span class="material-symbols-outlined text-blue-400">date_range</span>
+</div>
+<ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300 flex-1">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+<span>Жүйелік жаңартулар (Updates)</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+<span>Дискілік кеңістікті тексеру</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+<span>Антивирус базасын жаңарту</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Monthly -->
+<div class="relative group">
+<div class="absolute -inset-0.5 bg-gradient-to-r from-blue-300 to-primary rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-200"></div>
+<div class="relative p-6 bg-white dark:bg-[#151a23] rounded-lg h-full flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-lg">Айлық</h3>
+<span class="material-symbols-outlined text-blue-400">calendar_month</span>
+</div>
+<ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300 flex-1">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+<span>Қолжетімділік есебі (Uptime report)</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+<span>Пайдаланушы құқықтарын аудиттеу</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+<span>Желдету жүйесін тексеру</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Quarterly/Yearly -->
+<div class="relative group">
+<div class="absolute -inset-0.5 bg-gradient-to-r from-blue-300 to-primary rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-200"></div>
+<div class="relative p-6 bg-white dark:bg-[#151a23] rounded-lg h-full flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-lg">Тоқсандық</h3>
+<span class="material-symbols-outlined text-blue-400">event_repeat</span>
+</div>
+<ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300 flex-1">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+<span>Физикалық тазалау (шаңнан)</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+<span>Жабдықты ауыстыру жоспары</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+<span>Өнімділікті терең талдау</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action / Info Block -->
+<section class="w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 py-16">
+<div class="bg-blue-600 dark:bg-blue-700 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 text-white relative overflow-hidden">
+<!-- Abstract decorative circle -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -left-20 -bottom-20 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="text-2xl md:text-3xl font-bold mb-4">Сұрақтарыңыз бар ма?</h2>
+<p class="text-blue-100 text-lg leading-relaxed">
+                        Егер сізге серверлік жабдық туралы қосымша ақпарат немесе өндірістік практика бойынша кеңес қажет болса, бізге хабарласыңыз.
+                    </p>
+</div>
+<div class="relative z-10 flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<button class="px-6 py-3 bg-white text-blue-600 font-bold rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap">
+                        Кері байланыс
+                    </button>
+<button class="px-6 py-3 bg-blue-500/30 border border-white/20 text-white font-bold rounded-lg hover:bg-blue-500/40 transition-colors whitespace-nowrap">
+                        FAQ бөлімі
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-[#1a202c] border-t border-[#f0f1f5] dark:border-[#2d3748] py-8">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex flex-col gap-1 text-center md:text-left">
+<p class="text-[#111318] dark:text-white font-bold text-lg">Server Maintenance Portal</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Өндірістік практика есебі © 2023</p>
+</div>
+<div class="flex gap-6">
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="sr-only">Facebook</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="sr-only">Instagram</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.468 2.373c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+</body></html>
