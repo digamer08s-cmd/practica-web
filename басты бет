@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="light" lang="kk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Басты бет - Серверлік жабдықтар</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="w-full bg-white dark:bg-[#1a202c] border-b border-[#f0f1f5] dark:border-[#2d3748]">
+<div class="max-w-[960px] mx-auto">
+<header class="flex items-center justify-between whitespace-nowrap px-4 sm:px-10 py-3">
+<div class="flex items-center gap-4 text-[#111318] dark:text-white">
+<div class="size-6 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">dns</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Практикалық Есеп 2024</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-primary text-sm font-bold leading-normal" href="#">Басты бет</a>
+<a class="text-[#111318] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Есеп</a>
+<a class="text-[#111318] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Күнделік</a>
+<a class="text-[#111318] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Қорытынды</a>
+</nav>
+</div>
+<div class="md:hidden text-[#111318] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</div>
+</header>
+</div>
+</div>
+<div class="flex flex-col items-center w-full grow">
+<div class="w-full max-w-[960px] px-4 sm:px-10 pt-8 pb-4">
+<div class="@container">
+<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-8 text-center shadow-sm relative overflow-hidden" data-alt="Abstract server room blue technology background" style='background-image: linear-gradient(rgba(17, 19, 24, 0.6) 0%, rgba(17, 19, 24, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuB8uto96DLLdTg4yj7yKfUtb0RxjDKwJlIEUK1-LlwRELpGK2rc6TBwgjziJ2sBIU5voEES2AuRXkO017waBmq4_JdjiQ3piP9YMkcTjZcp0Yp0DtS9C0FHyn6X-O28uoGhHvtVqgyZMxV3NtfNjMRwvk7N6QHiWRKc3i5YXLwqsp04BRH_vras1VxkmRpfvNEnaR2NA0J95173dUuzjVDg7gz8DGDIPM04cW40__a7y_4yokZV3ajlQ1odCxYb-7FRBGCkek-Pgb4J");'>
+<div class="relative z-10 flex flex-col gap-4 max-w-[720px]">
+<div class="inline-flex items-center justify-center gap-2 self-center rounded-full bg-white/20 px-3 py-1 backdrop-blur-sm">
+<span class="material-symbols-outlined text-white text-sm">school</span>
+<span class="text-white text-xs font-medium uppercase tracking-wider">Өндірістік практика</span>
+</div>
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] sm:text-5xl lg:text-6xl drop-shadow-sm">
+                            Ұйымның серверлік жабдықтарына қызмет көрсету
+                        </h1>
+<p class="text-gray-200 text-base sm:text-lg font-normal leading-relaxed max-w-[600px] mx-auto">
+                            Бұл веб-сайт өндірістік практика барысында атқарылған жұмыстарды, зерттеу нәтижелерін және серверлік инфрақұрылымды жетілдіру ұсыныстарын қорғау үшін әзірленген.
+                        </p>
+<div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
+<button class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-blue-600 transition-colors text-white text-base font-bold leading-normal shadow-lg">
+<span class="truncate">Есепті бастау</span>
+<span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</button>
+<button class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-md text-white text-base font-bold leading-normal border border-white/20">
+<span class="truncate">Тұсаукесер жүктеу</span>
+<span class="material-symbols-outlined ml-2 text-sm">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full max-w-[960px] px-4 sm:px-10 py-10">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-2">
+<h2 class="text-[#111318] dark:text-white text-2xl font-bold leading-tight">
+                        Жоба туралы негізгі мәліметтер
+                    </h2>
+<p class="text-[#606e8a] dark:text-gray-400 text-base font-normal">
+                        Төменде студент, практика орны және жұмыстың мақсаты көрсетілген.
+                    </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="group flex flex-col gap-4 rounded-xl border border-[#dbdfe6] dark:border-[#2d3748] bg-white dark:bg-[#1a202c] p-6 hover:shadow-md transition-shadow">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-[#111318] dark:text-white text-lg font-bold">Студент</h3>
+<div class="flex flex-col gap-1 mt-2">
+<div class="flex justify-between items-center border-b border-dashed border-gray-200 dark:border-gray-700 pb-2">
+<span class="text-[#606e8a] dark:text-gray-400 text-sm">Аты-жөні:</span>
+<span class="text-[#111318] dark:text-gray-200 text-sm font-medium">Серікова Дильназ</span>
+</div>
+<div class="flex justify-between items-center pt-1">
+<span class="text-[#606e8a] dark:text-gray-400 text-sm">Тобы:</span>
+<span class="text-[#111318] dark:text-gray-200 text-sm font-medium">ИС3Б(9)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group flex flex-col gap-4 rounded-xl border border-[#dbdfe6] dark:border-[#2d3748] bg-white dark:bg-[#1a202c] p-6 hover:shadow-md transition-shadow">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">domain</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-[#111318] dark:text-white text-lg font-bold">Практика орны</h3>
+<div class="flex flex-col gap-1 mt-2">
+<div class="flex justify-between items-center border-b border-dashed border-gray-200 dark:border-gray-700 pb-2">
+<span class="text-[#606e8a] dark:text-gray-400 text-sm">Компания:</span>
+<span class="text-[#111318] dark:text-gray-200 text-sm font-medium">Жастар ресурстық орталық</span>
+</div>
+<div class="flex justify-between items-center pt-1">
+<span class="text-[#606e8a] dark:text-gray-400 text-sm">Орналасуы:</span>
+<span class="text-[#111318] dark:text-gray-200 text-sm font-medium">Өскемен қаласы</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group flex flex-col gap-4 rounded-xl border border-[#dbdfe6] dark:border-[#2d3748] bg-white dark:bg-[#1a202c] p-6 hover:shadow-md transition-shadow">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">target</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-[#111318] dark:text-white text-lg font-bold">Мақсаты</h3>
+<p class="text-[#606e8a] dark:text-gray-400 text-sm font-normal leading-relaxed mt-2">
+                                Серверлік жабдықтардың үздіксіз жұмысын қамтамасыз ету және қызмет көрсету процесін оңтайландыру әдістерін зерттеу.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full max-w-[960px] px-4 sm:px-10 pb-10">
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+<div class="h-32 rounded-lg bg-cover bg-center" data-alt="Close up of ethernet cables connected to a switch" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDgZ5ES9-dVPUaBHLnrDK3yZB1tWhzdKHd0soCakwg8c-CrAcaAW3e_Q_8pX680GsufYEyP7LWWLGKPglEJWJyOBxY7ggk753fyw-_P3fHPFcVAmMmYcxsSqPwoOZj9qAvUG-Pj8VTYs5GUwdy7rwnxipiA8RIfN4s5gVyIGJ3T87qJGjcDf0QfVfJixzEzCOvZr4ZmGL2wubYuh3Em4L86vjIAAO1XXaAq8mWIFO5exlAwwOold5lh2dwSEDwy9TucJRUR2j__tFZt");'></div>
+<div class="h-32 rounded-lg bg-cover bg-center" data-alt="Server technician working on a laptop" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCRGetpAl4mDlqIgq1f_rp2tzDKrKshJHEVKRD5FKYrLxSLzCJFzaf7e1OdCJ3zDSe6p2HNjMLmoVyd97AqVSrus5YxoxlBZS0SdWpltn-WsmqjvhsWel_dcxuBYeLSWtHBhp4YN9ZNABGrMlwVSsRhPPqsNvJQBp-jD3jiDxYH9m3quqiDtBTClORS9B9vrctjKTMD0CaBi9xgoHSao19Z5GDFtpUWnfqlsN7Cf6b5H2xr41kXmxTi_2kZPHISIzZPUGfUYZUdsGBU");'></div>
+<div class="h-32 rounded-lg bg-cover bg-center" data-alt="Digital code abstract background blue" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_a8HxI-L_ha9FbyLRP_BSnyVFtFKL0dkwGWFHROQhf5CA_5XuRft7leU3xKfZxXhY9j_Y51XmNvv8y6cKSycg5Fn0v8XJAFT3QeRC_QNmGsXBNBr9uFJdbj2MIAGYu_b4i42ieCw2nj1qlMO6rVg9VUAzw_-IP5JGf_mCsinsUNAS3ClXQ9Ic9D4QhXnvBO5dl949H0zxEdzlRBbQHYfSkdGniHjcHLEd8Ih6YMarHPIgjYgWbeGppNsN1lZOoiifCToztXTUtdvo");'></div>
+<div class="h-32 rounded-lg bg-cover bg-center" data-alt="Modern server rack with blue led lights" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAte0QIX-CNdd8Njv57MzTnSo1B64dG2N_mYY5xdsUSjR_7LG5D1FZPpt6tifYeEpzvAsz4bEsZ9L0PFH7iX-fvlHmZzeI06R0tL2CHldJWr1yOPacbeFHnnMqMxGEI8H8T6jEsw1UzVYfmGyBM5USwOsLnvvqcQpYFPX7-t5hxVz0s5u5EHjHzw9d-uj7yT1OQXgHTYVmgwdlOh1ANO2VHVdxJtI0NNVQBYRJMwzDJjadFYk_DnihJK9f8iEric6xJ0nFMTWntaQLF");'></div>
+</div>
+</div>
+</div>
+<footer class="w-full bg-white dark:bg-[#1a202c] border-t border-[#f0f1f5] dark:border-[#2d3748] mt-auto">
+<div class="max-w-[960px] mx-auto px-4 sm:px-10 py-8">
+<div class="flex flex-col items-center gap-6 text-center">
+<div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+<a class="text-[#606e8a] dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Байланыс</a>
+<a class="text-[#606e8a] dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Құпиялылық саясаты</a>
+<a class="text-[#606e8a] dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Автор туралы</a>
+</div>
+<div class="h-px w-full max-w-[200px] bg-[#f0f1f5] dark:bg-[#2d3748]"></div>
+<p class="text-[#9aa2b1] dark:text-gray-500 text-sm font-normal">
+                    © 2024 IT Университеті. Барлық құқықтар қорғалған. <br/>
+<span class="text-xs">Өндірістік практика есебін қорғау платформасы.</span>
+</p>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
