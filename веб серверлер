@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="light" lang="kk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Веб-серверлер - Өндірістік практика</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318]">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-solid border-b-[#e5e7eb] bg-white px-6 py-4 lg:px-20 dark:bg-[#1a202c] dark:border-[#2d3748]">
+<div class="flex items-center gap-4">
+<div class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-2xl">dns</span>
+</div>
+<div>
+<h2 class="text-lg font-bold leading-tight tracking-tight text-[#111318] dark:text-white">Серверлік Жабдықтар</h2>
+<p class="text-xs font-medium text-gray-500">Өндірістік практика есебі</p>
+</div>
+</div>
+<div class="hidden flex-1 justify-end gap-8 md:flex">
+<nav class="flex items-center gap-8">
+<a class="text-sm font-medium leading-normal text-[#111318] hover:text-primary dark:text-gray-200" href="#">Басты бет</a>
+<a class="text-sm font-medium leading-normal text-primary" href="#">Веб-серверлер</a>
+<a class="text-sm font-medium leading-normal text-[#111318] hover:text-primary dark:text-gray-200" href="#">Практика туралы</a>
+</nav>
+<button class="flex h-10 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal text-white transition-colors hover:bg-blue-700">
+<span class="truncate">Жүктеу</span>
+</button>
+</div>
+<button class="md:hidden text-[#111318] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex flex-col items-center">
+<!-- Hero Section -->
+<section class="w-full max-w-[1200px] px-6 py-12 lg:px-20 lg:py-16">
+<div class="@container">
+<div class="flex flex-col gap-10 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100 lg:p-10 lg:flex-row dark:bg-[#1a202c] dark:ring-gray-700">
+<div class="flex flex-col justify-center gap-6 lg:w-1/2">
+<div class="flex flex-col gap-4">
+<span class="w-fit rounded-full bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary dark:bg-blue-900/30">Тақырып</span>
+<h1 class="text-4xl font-black leading-tight tracking-[-0.033em] text-[#111318] lg:text-5xl dark:text-white">
+                                    Веб-серверлер: Apache, Nginx және IIS
+                                </h1>
+<p class="text-base font-normal leading-relaxed text-[#606e8a] dark:text-gray-400">
+                                    Ұйымның ақпараттық инфрақұрылымындағы веб-серверлердің рөлі, жұмыс істеу принциптері және олардың тиімділігін арттыру жолдары. Бұл бөлімде негізгі технологиялық шешімдер қарастырылады.
+                                </p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="flex h-12 min-w-[120px] cursor-pointer items-center justify-center rounded-lg bg-primary px-6 text-base font-bold text-white transition-transform hover:scale-105">
+<span class="truncate">Толығырақ оқу</span>
+</button>
+<button class="flex h-12 min-w-[120px] cursor-pointer items-center justify-center rounded-lg border border-[#dbdfe6] bg-white px-6 text-base font-bold text-[#111318] hover:bg-gray-50 dark:bg-transparent dark:text-white dark:border-gray-600 dark:hover:bg-gray-800">
+<span class="truncate">Презентация</span>
+</button>
+</div>
+</div>
+<div class="relative min-h-[300px] w-full lg:w-1/2 overflow-hidden rounded-xl bg-gray-100 shadow-inner" data-alt="Abstract visualization of server data flow and network connections in blue tones" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3XL2SBbnOe3bPFU5Se_qfYX_i77_zzUztcsDG5S8NMcjpVAUPnbPHfFwk1FZPnkjnz3QMMLlpiJ4WgtDuFp9coPw1ORsgWrrqkQuW_VlayjFJrAEwJIuxNKzJUoj-Wbp4go23T7qNY0YnrZAIhcyEabcGJyMoplnSaVlZ3355cPnAeXNwjocOx9wwDbYoHTrYe2J7RoQ4DvU5wtVJc-E2RnUDJc_0C58xawWtumDKpQTbvqRKtNQlDJwe5OfZLs7MVCuzWAFfOADc"); background-size: cover; background-position: center;'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<p class="text-sm font-medium opacity-90">Сервер бөлмесі</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Section (Cards) -->
+<section class="w-full max-w-[1200px] px-6 py-8 lg:px-20">
+<div class="mb-10 flex flex-col gap-3">
+<h2 class="max-w-[720px] text-3xl font-bold leading-tight tracking-tight text-[#111318] dark:text-white">
+                        Танымал Веб-серверлерге шолу
+                    </h2>
+<p class="max-w-[720px] text-base text-[#606e8a] dark:text-gray-400">
+                        Қазіргі таңда өндірісте кеңінен қолданылатын үш негізгі серверлік шешімнің қысқаша сипаттамасы.
+                    </p>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+<!-- Apache Card -->
+<div class="group flex flex-col gap-4 rounded-xl border border-[#dbdfe6] bg-white p-6 transition-all hover:border-primary hover:shadow-md dark:bg-[#1a202c] dark:border-gray-700">
+<div class="flex size-12 items-center justify-center rounded-full bg-red-50 text-red-600 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">flight</span> <!-- Using feather as abstract for Apache -->
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-xl font-bold leading-tight text-[#111318] dark:text-white">Apache HTTP Server</h3>
+<p class="text-sm leading-normal text-[#606e8a] dark:text-gray-400">
+                                Модульдік архитектурасы бар, икемді және әлемдегі ең көп қолданылатын сенімді веб-сервер. .htaccess арқылы баптау мүмкіндігі мол.
+                            </p>
+</div>
+<div class="mt-auto pt-4">
+<a class="flex items-center text-sm font-bold text-primary hover:underline" href="#">
+                                Толығырақ <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Nginx Card -->
+<div class="group flex flex-col gap-4 rounded-xl border border-[#dbdfe6] bg-white p-6 transition-all hover:border-primary hover:shadow-md dark:bg-[#1a202c] dark:border-gray-700">
+<div class="flex size-12 items-center justify-center rounded-full bg-green-50 text-green-600 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">speed</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-xl font-bold leading-tight text-[#111318] dark:text-white">Nginx</h3>
+<p class="text-sm leading-normal text-[#606e8a] dark:text-gray-400">
+                                Жоғары жүктемеге төзімділікті (High Concurrency) және статикалық контентті жылдам өңдеуді қамтамасыз етеді. Reverse proxy ретінде танымал.
+                            </p>
+</div>
+<div class="mt-auto pt-4">
+<a class="flex items-center text-sm font-bold text-primary hover:underline" href="#">
+                                Толығырақ <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- IIS Card -->
+<div class="group flex flex-col gap-4 rounded-xl border border-[#dbdfe6] bg-white p-6 transition-all hover:border-primary hover:shadow-md dark:bg-[#1a202c] dark:border-gray-700">
+<div class="flex size-12 items-center justify-center rounded-full bg-blue-50 text-blue-600 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">desktop_windows</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-xl font-bold leading-tight text-[#111318] dark:text-white">Microsoft IIS</h3>
+<p class="text-sm leading-normal text-[#606e8a] dark:text-gray-400">
+                                Windows Server ортасымен тығыз интеграцияланған, басқаруға ыңғайлы графикалық интерфейсі (GUI) бар корпоративтік шешім.
+                            </p>
+</div>
+<div class="mt-auto pt-4">
+<a class="flex items-center text-sm font-bold text-primary hover:underline" href="#">
+                                Толығырақ <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Comparison Table Section -->
+<section class="w-full max-w-[1200px] px-6 py-8 lg:px-20 pb-20">
+<div class="mb-6 flex items-center justify-between">
+<h2 class="text-2xl font-bold leading-tight tracking-[-0.015em] text-[#111318] dark:text-white">Салыстырмалы талдау кестесі</h2>
+<button class="hidden text-sm font-medium text-primary hover:underline sm:block">Толық есепті жүктеу</button>
+</div>
+<div class="overflow-hidden rounded-xl border border-[#dbdfe6] bg-white shadow-sm dark:bg-[#1a202c] dark:border-gray-700">
+<div class="overflow-x-auto">
+<table class="w-full min-w-[800px] border-collapse text-left">
+<thead>
+<tr class="bg-gray-50 border-b border-[#dbdfe6] dark:bg-gray-800 dark:border-gray-700">
+<th class="p-4 text-sm font-bold text-[#111318] w-[25%] dark:text-white">Критерий</th>
+<th class="p-4 text-sm font-bold text-[#111318] w-[25%] dark:text-white">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-red-500 text-lg">flight</span> Apache
+                                        </div>
+</th>
+<th class="p-4 text-sm font-bold text-[#111318] w-[25%] dark:text-white">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500 text-lg">bolt</span> Nginx
+                                        </div>
+</th>
+<th class="p-4 text-sm font-bold text-[#111318] w-[25%] dark:text-white">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-500 text-lg">window</span> IIS
+                                        </div>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#dbdfe6] dark:divide-gray-700">
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+<td class="p-4 text-sm font-medium text-[#111318] dark:text-gray-200">Архитектура</td>
+<td class="p-4 text-sm text-[#606e8a] dark:text-gray-400">Процесске негізделген (Process-driven)</td>
+<td class="p-4 text-sm text-[#606e8a] dark:text-gray-400">Оқиғаға негізделген (Event-driven)</td>
+<td class="p-4 text-sm text-[#606e8a] dark:text-gray-400">Жіпке негізделген (Thread-based)</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+<td class="p-4 text-sm font-medium text-[#111318] dark:text-gray-200">ОЖ қолдауы</td>
+<td class="p-4 text-sm text-[#606e8a] dark:text-gray-400">Linux, Unix, Windows, macOS</td>
+<td class="p-4 text-sm text-[#606e8a] dark:text-gray-400">Linux, Unix, Windows, macOS</td>
+<td class="p-4 text-sm text-[#606e8a] dark:text-gray-400">Тек Windows</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+<td class="p-4 text-sm font-medium text-[#111318] dark:text-gray-200">Баптау икемділігі</td>
+<td class="p-4 text-sm text-[#606e8a] dark:text-gray-400">.htaccess арқылы өте икемді</td>
+<td class="p-4 text-sm text-[#606e8a] dark:text-gray-400">Орталық конфиг файлдары (.conf)</td>
+<td class="p-4 text-sm text-[#606e8a] dark:text-gray-400">Графикалық UI және XML файлдары</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+<td class="p-4 text-sm font-medium text-[#111318] dark:text-gray-200">Статикалық контент</td>
+<td class="p-4 text-sm text-[#606e8a] dark:text-gray-400">Жақсы, бірақ ресурс көп тұтынады</td>
+<td class="p-4 text-sm text-green-600 font-medium dark:text-green-400">Өте жылдам, аз ресурс</td>
+<td class="p-4 text-sm text-[#606e8a] dark:text-gray-400">Жақсы, орташа ресурс</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+<td class="p-4 text-sm font-medium text-[#111318] dark:text-gray-200">PHP өңдеу</td>
+<td class="p-4 text-sm text-[#606e8a] dark:text-gray-400">mod_php (ішкі модуль)</td>
+<td class="p-4 text-sm text-[#606e8a] dark:text-gray-400">PHP-FPM (сыртқы процесс)</td>
+<td class="p-4 text-sm text-[#606e8a] dark:text-gray-400">FastCGI</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="mt-auto border-t border-[#e5e7eb] bg-white py-10 text-center dark:bg-[#1a202c] dark:border-gray-800">
+<div class="flex flex-col items-center justify-center gap-4">
+<div class="flex size-10 items-center justify-center rounded-lg bg-gray-100 text-[#111318] dark:bg-gray-700 dark:text-white">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div>
+<p class="text-sm font-medium text-[#111318] dark:text-white">Өндірістік практиканы қорғау жұмысы</p>
+<p class="text-sm text-[#606e8a] dark:text-gray-400">Тақырыбы: Ұйымның серверлік жабдықтарына қызмет көрсету</p>
+</div>
+<div class="flex gap-6 pt-4 text-sm text-[#606e8a] dark:text-gray-400">
+<a class="hover:text-primary" href="#">Презентация</a>
+<a class="hover:text-primary" href="#">Әдебиеттер тізімі</a>
+<a class="hover:text-primary" href="#">Байланыс</a>
+</div>
+<p class="mt-4 text-xs text-gray-400">© 2023 Барлық құқықтар қорғалған.</p>
+</div>
+</footer>
+</div>
+</body></html>
