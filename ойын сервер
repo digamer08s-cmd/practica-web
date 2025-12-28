@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="light" lang="kk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Өндірістік практика есебі - Серверлер</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Noto+Sans:wght@300..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-white font-display">
+<!-- Top Navigation -->
+<div class="relative w-full bg-white dark:bg-[#1a2230] border-b border-[#f0f1f5] dark:border-[#2a3441]">
+<div class="layout-container flex justify-center w-full">
+<div class="flex max-w-[1280px] w-full px-6 lg:px-10 py-3 items-center justify-between">
+<div class="flex items-center gap-4 text-[#111318] dark:text-white">
+<div class="size-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">dns</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Өндірістік практика есебі</h2>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#intro">Кіріспе</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#game-servers">Ойын серверлері</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#ftp-server">FTP</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#dns-server">DNS</a>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold shadow-sm hover:bg-blue-600 transition-colors">
+<span class="truncate">Жүктеу</span>
+</button>
+</div>
+<!-- Mobile Menu Icon (Placeholder) -->
+<div class="md:hidden text-[#111318] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Hero Section -->
+<div class="relative flex w-full flex-col bg-white dark:bg-[#1a2230] pt-10 pb-16" id="intro">
+<div class="flex justify-center px-4 md:px-10">
+<div class="flex flex-col max-w-[1280px] w-full">
+<div class="flex flex-col-reverse lg:flex-row gap-8 lg:gap-16 items-center">
+<!-- Text Content -->
+<div class="flex flex-col gap-6 flex-1 text-center lg:text-left">
+<div class="flex flex-col gap-3">
+<span class="text-primary font-bold tracking-wider text-sm uppercase">Тақырыбы: Ұйымның серверлік жабдықтарына қызмет көрсету</span>
+<h1 class="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-[#111318] dark:text-white">
+                                Ойын, FTP және DNS серверлерінің қызметі
+                            </h1>
+<p class="text-[#606e8a] dark:text-gray-300 text-lg leading-relaxed max-w-[600px] mx-auto lg:mx-0">
+                                Бұл есепте желілік инфрақұрылымның маңызды компоненттері қарастырылады. Ойын серверлерінің өнімділігін, FTP арқылы файл алмасуды және DNS жүйесінің адресациялау принциптерін талдау.
+                            </p>
+</div>
+<div class="flex gap-4 justify-center lg:justify-start">
+<a class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-lg shadow-blue-500/20 hover:bg-blue-600 transition-all" href="#game-servers">
+                                Бастау
+                            </a>
+<a class="flex items-center justify-center rounded-lg h-12 px-6 bg-[#f0f2f5] dark:bg-[#2a3441] text-[#111318] dark:text-white text-base font-bold hover:bg-[#e4e7eb] dark:hover:bg-[#374151] transition-all" href="#conclusion">
+                                Қорытынды
+                            </a>
+</div>
+</div>
+<!-- Hero Image -->
+<div class="w-full lg:w-1/2 flex justify-center">
+<div class="relative w-full aspect-video lg:aspect-[4/3] max-w-[600px] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-100 to-indigo-50 dark:from-slate-800 dark:to-slate-900 border border-gray-100 dark:border-gray-700">
+<div class="absolute inset-0 bg-cover bg-center opacity-90" data-alt="Modern server room with blue LED lights indicating data processing" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8rS_bvmk-YXUPBDJ9-GfChhNvR3KjJcM1IaeXvSkzj3Nj_Vt3udg9bSGfahFxKehVsR5_xoyu5J6otwSldTvtGabnb8qJT7PToHFlNwXYx96GEzHQTJRqjnoJVZs35zaVeTJRIpsAeGnFMsyMaa7JiQ25KUK33iecWX8ai4X9o3PoKThZ_k1EeWZltVyTz4cR6hmelRzaGIsO1q99JG38W6QUomwrVeOzaFiFwNc5ESdj-ohczjJL5GSTcLCBIMXPC3uOBdHP4Lwh");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white font-mono text-sm">
+<div class="flex items-center gap-2 mb-1">
+<div class="size-2 rounded-full bg-green-400 animate-pulse"></div>
+<span>System Status: Online</span>
+</div>
+<div class="opacity-80">Uptime: 99.9%</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Game Servers Section -->
+<div class="relative w-full bg-background-light dark:bg-background-dark py-16" id="game-servers">
+<div class="flex justify-center px-4 md:px-10">
+<div class="flex flex-col max-w-[960px] w-full">
+<!-- Header -->
+<div class="flex flex-col gap-3 mb-10 text-center md:text-left">
+<div class="inline-flex items-center gap-2 justify-center md:justify-start">
+<span class="p-2 bg-blue-100 dark:bg-blue-900/30 text-primary rounded-lg">
+<span class="material-symbols-outlined">sports_esports</span>
+</span>
+<h2 class="text-2xl md:text-3xl font-bold text-[#111318] dark:text-white">Ойын серверлері (Game Servers)</h2>
+</div>
+<p class="text-[#606e8a] dark:text-gray-400 max-w-[700px]">
+                        Ойын серверлері – көп ойыншылы бейне ойындардағы клиенттер арасындағы оқиғаларды үйлестіретін арнайы бағдарламалық жасақтама немесе жабдық.
+                    </p>
+</div>
+<!-- Pros & Cons Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Pros -->
+<div class="bg-white dark:bg-[#1e293b] p-6 md:p-8 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+<h3 class="text-lg font-bold text-green-600 dark:text-green-400 mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">thumb_up</span> Артықшылықтары
+                        </h3>
+<div class="flex flex-col gap-6">
+<div class="flex gap-4">
+<div class="mt-1 bg-green-50 dark:bg-green-900/20 p-2 rounded-lg h-fit text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined">speed</span>
+</div>
+<div>
+<h4 class="font-bold text-[#111318] dark:text-white">Жоғары өнімділік</h4>
+<p class="text-sm text-[#606e8a] dark:text-gray-400 mt-1">Орталықтандырылған өңдеу арқасында кідіріс (ping) азаяды және ойын процесі тұрақты болады.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="mt-1 bg-green-50 dark:bg-green-900/20 p-2 rounded-lg h-fit text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined">tune</span>
+</div>
+<div>
+<h4 class="font-bold text-[#111318] dark:text-white">Толық бақылау</h4>
+<p class="text-sm text-[#606e8a] dark:text-gray-400 mt-1">Администраторлар ойын ережелерін, карталарды және қолжетімділікті толық реттей алады.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Cons -->
+<div class="bg-white dark:bg-[#1e293b] p-6 md:p-8 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+<h3 class="text-lg font-bold text-red-500 dark:text-red-400 mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">thumb_down</span> Кемшіліктері
+                        </h3>
+<div class="flex flex-col gap-6">
+<div class="flex gap-4">
+<div class="mt-1 bg-red-50 dark:bg-red-900/20 p-2 rounded-lg h-fit text-red-500 dark:text-red-400">
+<span class="material-symbols-outlined">monetization_on</span>
+</div>
+<div>
+<h4 class="font-bold text-[#111318] dark:text-white">Қаржылық шығындар</h4>
+<p class="text-sm text-[#606e8a] dark:text-gray-400 mt-1">Серверді жалға алу, электр қуаты және техникалық қызмет көрсету қымбатқа түседі.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="mt-1 bg-red-50 dark:bg-red-900/20 p-2 rounded-lg h-fit text-red-500 dark:text-red-400">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div>
+<h4 class="font-bold text-[#111318] dark:text-white">Қауіпсіздік тәуекелдері</h4>
+<p class="text-sm text-[#606e8a] dark:text-gray-400 mt-1">DDoS шабуылдарына ұшырау қаупі жоғары, бұл ойынның тоқтап қалуына әкеледі.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- FTP Server Section -->
+<div class="relative w-full bg-white dark:bg-[#1a2230] py-16 border-y border-gray-100 dark:border-gray-800" id="ftp-server">
+<div class="flex justify-center px-4 md:px-10">
+<div class="flex flex-col max-w-[1024px] w-full">
+<!-- Header -->
+<div class="flex flex-col gap-2 mb-10 md:mb-14">
+<div class="inline-flex items-center gap-2">
+<span class="p-2 bg-orange-100 dark:bg-orange-900/30 text-orange-600 rounded-lg">
+<span class="material-symbols-outlined">folder_shared</span>
+</span>
+<h2 class="text-2xl md:text-3xl font-bold text-[#111318] dark:text-white">FTP Сервері (File Transfer Protocol)</h2>
+</div>
+<p class="text-[#606e8a] dark:text-gray-400">Желі арқылы файлдарды компьютерлер арасында тасымалдауға арналған стандартты протокол.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-10 items-start">
+<!-- Text Info -->
+<div class="flex flex-col gap-8 flex-1">
+<div class="space-y-4">
+<h3 class="text-xl font-bold text-[#111318] dark:text-white">Негізгі функциялары</h3>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5 text-xl">cloud_upload</span>
+<span class="text-[#4b5563] dark:text-gray-300">Веб-сайт файлдарын хостингке жүктеу.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5 text-xl">backup</span>
+<span class="text-[#4b5563] dark:text-gray-300">Маңызды деректердің резервтік көшірмелерін сақтау.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5 text-xl">lock</span>
+<span class="text-[#4b5563] dark:text-gray-300">Қолданушы құқықтарын шектеу арқылы қауіпсіз файл алмасу (SFTP).</span>
+</li>
+</ul>
+</div>
+<!-- Mini visual flow -->
+<div class="bg-background-light dark:bg-[#101622] p-6 rounded-xl border border-gray-200 dark:border-gray-700 flex items-center justify-between gap-2 text-center text-xs sm:text-sm font-medium text-gray-500">
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-3xl sm:text-4xl text-gray-700 dark:text-gray-300">laptop_chromebook</span>
+<span>Клиент</span>
+</div>
+<div class="flex-1 flex flex-col items-center px-2">
+<div class="w-full h-[2px] bg-gray-300 dark:bg-gray-600 relative">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-background-light dark:bg-[#101622] px-2 text-[10px] uppercase tracking-wide">request</div>
+</div>
+<span class="material-symbols-outlined text-primary my-1 animate-pulse">sync_alt</span>
+<div class="w-full h-[2px] bg-gray-300 dark:bg-gray-600 relative">
+<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-background-light dark:bg-[#101622] px-2 text-[10px] uppercase tracking-wide">data</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-3xl sm:text-4xl text-primary">dns</span>
+<span>FTP Сервер</span>
+</div>
+</div>
+</div>
+<!-- Terminal Visual -->
+<div class="w-full lg:w-1/2 bg-[#1e293b] rounded-xl overflow-hidden shadow-2xl border border-gray-700 font-mono text-sm self-stretch flex flex-col">
+<div class="bg-[#334155] px-4 py-3 flex items-center gap-2 border-b border-gray-600">
+<div class="w-3 h-3 rounded-full bg-red-500"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+<div class="w-3 h-3 rounded-full bg-green-500"></div>
+<span class="ml-2 text-gray-300 text-xs">admin@workstation:~</span>
+</div>
+<div class="p-6 text-gray-300 flex-1 flex flex-col gap-2">
+<div>
+<span class="text-green-400 mr-2">$</span>ftp connect ftp.myserver.com
+                            </div>
+<div class="text-white">Connected to ftp.myserver.com.</div>
+<div class="text-white">220 (vsFTPd 3.0.3)</div>
+<div>
+<span class="text-green-400 mr-2">$</span>user admin
+                            </div>
+<div class="text-white">331 Please specify the password.</div>
+<div>
+<span class="text-green-400 mr-2">$</span>pass *********
+                            </div>
+<div class="text-white">230 Login successful.</div>
+<div class="mt-2">
+<span class="text-green-400 mr-2">$</span>put practice_report.docx
+                            </div>
+<div class="text-gray-400 italic">... uploading file ...</div>
+<div class="text-white">226 Transfer complete.</div>
+<div class="mt-2 animate-pulse">
+<span class="text-green-400 mr-2">$</span>_
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- DNS Server Section -->
+<div class="relative w-full bg-background-light dark:bg-background-dark py-16" id="dns-server">
+<div class="flex justify-center px-4 md:px-10">
+<div class="flex flex-col max-w-[960px] w-full items-center">
+<!-- Header -->
+<div class="flex flex-col gap-2 mb-12 text-center items-center">
+<div class="inline-flex items-center gap-2">
+<span class="p-2 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-lg">
+<span class="material-symbols-outlined">public</span>
+</span>
+<h2 class="text-2xl md:text-3xl font-bold text-[#111318] dark:text-white">DNS Сервері (Domain Name System)</h2>
+</div>
+<p class="text-[#606e8a] dark:text-gray-400 max-w-[600px]">"Интернеттің телефон кітапшасы". DNS жүйесі адамға түсінікті домендік атауларды (google.com) компьютер түсінетін IP-мекенжайларға (142.250.190.46) аударады.</p>
+</div>
+<!-- Concept Visual -->
+<div class="w-full flex flex-col md:flex-row gap-4 items-center justify-center mb-12">
+<!-- Step 1 -->
+<div class="flex-1 bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col items-center gap-4 text-center h-full">
+<div class="size-12 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-[#111318] dark:text-white font-bold text-xl">1</div>
+<span class="material-symbols-outlined text-4xl text-gray-400">keyboard</span>
+<div>
+<h4 class="font-bold mb-1 dark:text-white">Сұраныс</h4>
+<p class="text-sm text-[#606e8a] dark:text-gray-400">Пайдаланушы "google.com" деп тереді.</p>
+</div>
+</div>
+<!-- Connector -->
+<div class="hidden md:flex flex-col items-center text-gray-300 dark:text-gray-600">
+<span class="material-symbols-outlined text-3xl">arrow_forward</span>
+</div>
+<div class="md:hidden text-gray-300 dark:text-gray-600 my-2">
+<span class="material-symbols-outlined text-3xl">arrow_downward</span>
+</div>
+<!-- Step 2 -->
+<div class="flex-1 bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-sm border border-primary/30 dark:border-primary/50 relative overflow-hidden flex flex-col items-center gap-4 text-center h-full">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">2</div>
+<span class="material-symbols-outlined text-4xl text-primary">dns</span>
+<div>
+<h4 class="font-bold mb-1 dark:text-white">DNS Сервер</h4>
+<p class="text-sm text-[#606e8a] dark:text-gray-400">Дерекқордан IP мекенжайды іздейді.</p>
+</div>
+</div>
+<!-- Connector -->
+<div class="hidden md:flex flex-col items-center text-gray-300 dark:text-gray-600">
+<span class="material-symbols-outlined text-3xl">arrow_forward</span>
+</div>
+<div class="md:hidden text-gray-300 dark:text-gray-600 my-2">
+<span class="material-symbols-outlined text-3xl">arrow_downward</span>
+</div>
+<!-- Step 3 -->
+<div class="flex-1 bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col items-center gap-4 text-center h-full">
+<div class="size-12 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-[#111318] dark:text-white font-bold text-xl">3</div>
+<span class="material-symbols-outlined text-4xl text-green-500">check_circle</span>
+<div>
+<h4 class="font-bold mb-1 dark:text-white">Жауап</h4>
+<p class="text-sm text-[#606e8a] dark:text-gray-400">Браузерге "142.250.190.46" қайтарады.</p>
+</div>
+</div>
+</div>
+<!-- Analogy Card -->
+<div class="bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-900/30 p-6 rounded-lg w-full flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-3xl mt-1">lightbulb</span>
+<div>
+<h4 class="font-bold text-[#111318] dark:text-white text-lg">Есте сақтаңыз:</h4>
+<p class="text-[#606e8a] dark:text-gray-300 mt-1 leading-relaxed">
+                            DNS болмаса, біз әр сайтты ашу үшін ұзын сандар тізбегін (IP-адрестерді) жаттап жүруге мәжбүр болар едік. Бұл жүйе интернетті пайдалануды қарапайым әрі ыңғайлы етеді.
+                         </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-white dark:bg-[#1a2230] border-t border-[#f0f1f5] dark:border-[#2a3441] py-10" id="conclusion">
+<div class="layout-container flex justify-center px-4 md:px-10">
+<div class="max-w-[1280px] w-full flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col gap-2 text-center md:text-left">
+<h3 class="font-bold text-lg text-[#111318] dark:text-white">Өндірістік практика</h3>
+<p class="text-sm text-[#606e8a] dark:text-gray-400">"Ұйымның серверлік жабдықтарына қызмет көрсету"</p>
+</div>
+<div class="flex flex-col gap-1 text-center md:text-right text-sm text-[#606e8a] dark:text-gray-400">
+<p>Орындаған: <span class="text-[#111318] dark:text-white font-medium">Студент Аты-Жөні</span></p>
+<p>Тексерген: <span class="text-[#111318] dark:text-white font-medium">Оқытушы Аты-Жөні</span></p>
+<p class="mt-2 text-xs opacity-70">2023-2024 оқу жылы</p>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
