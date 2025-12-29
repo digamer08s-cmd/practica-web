@@ -1,197 +1,81 @@
-<!DOCTYPE html>
+<section id="report" class="w-full bg-background-light dark:bg-background-dark py-20">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-10">
 
-<html class="light" lang="kk"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Практиканың мақсаты мен міндеттері</title>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#256af4",
-                        "background-light": "#f5f6f8",
-                        "background-dark": "#101622",
-                    },
-                    fontFamily: {
-                        "display": ["Lexend", "sans-serif"]
-                    },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-                },
-            },
-        }
-    </script>
-</head>
-<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-white antialiased">
-<div class="flex h-screen w-full overflow-hidden">
-<!-- Sidebar -->
-<aside class="hidden w-72 flex-col justify-between border-r border-[#dbdfe6] dark:border-gray-800 bg-white dark:bg-[#111318] p-4 md:flex">
-<div class="flex flex-col gap-8">
-<!-- User Profile / Title -->
-<div class="flex items-center gap-3">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 shadow-sm" data-alt="Student profile placeholder image with abstract blue pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAk85HFARYjIDnVfy2kxqSElSWmZRsQAmfuVh77IXStf2eCZXXLT_7WmLC1XMnkpRZBBFkIGGoy0t6hgj2_bHY9oRJVlID-dP8y2DD81_fJUumPsD84H3bYgADgvgTgGIXjymmm3cK977tAzxez5RGxL-DL9xbdlmeRvtF68T42BmCQBCy1k7MLdN6jHpfWy3Q-_AsvOWVEBDislkxpMKDUp77sZTGKSp1j45tqnHRkGQ4Y4c1Gb8Usescs2Uec73Pyh2d1c8DOaE7p");'>
-</div>
-<div class="flex flex-col">
-<h1 class="text-[#111318] dark:text-white text-base font-bold leading-normal">Өндірістік практика</h1>
-<p class="text-[#606e8a] dark:text-gray-400 text-xs font-normal leading-normal">Есеп беру жүйесі</p>
-</div>
-</div>
-<!-- Navigation -->
-<nav class="flex flex-col gap-2">
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#606e8a] dark:text-gray-400 hover:bg-[#f0f1f5] dark:hover:bg-gray-800 transition-colors" href="#">
-<span class="material-symbols-outlined text-[24px]">menu_book</span>
-<p class="text-sm font-medium leading-normal">Кіріспе</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary" href="#">
-<span class="material-symbols-outlined text-[24px] fill-1">flag</span>
-<p class="text-sm font-bold leading-normal">Мақсаты мен міндеттері</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#606e8a] dark:text-gray-400 hover:bg-[#f0f1f5] dark:hover:bg-gray-800 transition-colors" href="#">
-<span class="material-symbols-outlined text-[24px]">dns</span>
-<p class="text-sm font-medium leading-normal">Серверлік жабдықтар</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#606e8a] dark:text-gray-400 hover:bg-[#f0f1f5] dark:hover:bg-gray-800 transition-colors" href="#">
-<span class="material-symbols-outlined text-[24px]">article</span>
-<p class="text-sm font-medium leading-normal">Қорытынды</p>
-</a>
-</nav>
-</div>
-<div class="flex flex-col gap-2">
-<button class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#606e8a] dark:text-gray-400 hover:bg-red-50 hover:text-red-500 dark:hover:bg-red-900/20 transition-colors">
-<span class="material-symbols-outlined text-[24px]">logout</span>
-<p class="text-sm font-medium leading-normal">Шығу</p>
-</button>
-</div>
-</aside>
-<!-- Main Content -->
-<main class="flex-1 flex flex-col h-full overflow-y-auto bg-background-light dark:bg-background-dark">
-<div class="flex flex-col gap-6 p-6 md:p-10 max-w-[1200px] mx-auto w-full">
-<!-- Page Heading -->
-<header class="flex flex-col gap-2">
-<div class="flex flex-wrap items-center gap-2">
-<span class="text-primary text-sm font-bold uppercase tracking-wider">Практикалық жұмыс</span>
-<span class="text-[#dbdfe6] dark:text-gray-600">•</span>
-<span class="text-[#606e8a] dark:text-gray-400 text-sm">3-курс АЖ</span>
-</div>
-<h1 class="text-[#111318] dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">
-                        Практиканың мақсаты мен міндеттері
-                    </h1>
-<p class="text-[#606e8a] dark:text-gray-300 text-lg font-normal leading-normal max-w-3xl">
-                        Тақырыбы: Ұйымның серверлік жабдықтарына қызмет көрсету
-                    </p>
-</header>
-<!-- Hero / Main Goal Card -->
-<section class="w-full">
-<div class="bg-cover bg-center flex flex-col items-stretch justify-end rounded-xl pt-32 md:pt-48 shadow-lg overflow-hidden group relative" data-alt="Futuristic server room with blue neon lighting representing data infrastructure" style='background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(16, 22, 34, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuANaltWLKwju5tZ0PggK-otcNKKgAFFH7iy7KTRNE35Qd59aKwg-Aj5hnPbZWdSgO9rtz8fagds2o8TqU0gIJURXIB9VDKXoaIL4T42iS2FYJjWG-EYjvM_ijyMVyih1nMdu_XMcRq9l2vJHwnKl2-8Af2LX3aUeFcMef2U63d9E3Kwr1dhrPWhi-yNNzFFj69IAsf8ZlzTa3vOaq7iA7gFO5Ewj_ekkNtel37lbdMLTOEg54jZSvELqbPSzVjzdvi6oYG4N4k7HnD3");'>
-<div class="flex flex-col md:flex-row w-full items-start md:items-end justify-between gap-6 p-6 md:p-8 z-10">
-<div class="flex max-w-2xl flex-1 flex-col gap-3">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 backdrop-blur-sm border border-blue-500/30 w-fit">
-<span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-<span class="text-blue-100 text-xs font-semibold tracking-wide uppercase">Негізгі мақсат</span>
-</div>
-<h2 class="text-white text-2xl md:text-3xl font-bold leading-tight">
-                                    Серверлік инфрақұрылымды басқару
-                                </h2>
-<p class="text-gray-200 text-base md:text-lg font-medium leading-relaxed">
-                                    Ұйымның серверлік жабдықтарына қызмет көрсету және оларды күтіп ұстау дағдыларын толықтай меңгеру, теориялық білімді практикада қолдану арқылы жүйелік әкімшілендіру негіздерін бекіту.
-                                </p>
-</div>
-<button class="flex min-w-[140px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-12 px-6 bg-primary hover:bg-blue-600 text-white text-sm font-bold leading-normal tracking-[0.015em] transition-all shadow-lg shadow-blue-500/30">
-<span class="truncate">Толығырақ</span>
-<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
-</button>
-</div>
-</div>
+    <!-- ПРАКТИКАНЫҢ МАҚСАТЫ -->
+    <header class="mb-10">
+      <span class="text-primary text-sm font-bold uppercase tracking-wider">
+        Практикалық жұмыс
+      </span>
+      <h2 class="text-3xl md:text-4xl font-black mt-2">
+        Практиканың мақсаты мен міндеттері
+      </h2>
+      <p class="text-[#606e8a] dark:text-gray-300 text-lg mt-2">
+        Тақырыбы: Ұйымның серверлік жабдықтарына қызмет көрсету
+      </p>
+    </header>
+
+    <!-- НЕГІЗГІ МАҚСАТ -->
+    <section class="mb-14">
+      <div class="rounded-xl p-8 bg-gradient-to-br from-blue-600 to-indigo-700 text-white shadow-xl">
+        <h3 class="text-2xl font-bold mb-3">Негізгі мақсат</h3>
+        <p class="text-base leading-relaxed">
+          Ұйымның серверлік жабдықтарына қызмет көрсету және оларды күтіп ұстау
+          дағдыларын меңгеру, теориялық білімді практикада қолдану арқылы
+          жүйелік әкімшілендіру негіздерін бекіту.
+        </p>
+      </div>
+    </section>
+
+    <!-- МІНДЕТТЕР -->
+    <section>
+      <h3 class="text-2xl font-bold mb-6">
+        Зерттелетін міндеттер мен тақырыптар
+      </h3>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-5 bg-white dark:bg-[#1c222e] rounded-xl border">
+          <h4 class="font-bold mb-2">Сервер түрлері</h4>
+          <p class="text-sm text-[#606e8a] dark:text-gray-400">
+            Серверлердің түрлері, құрылымы және аппараттық қамтамасыз ету.
+          </p>
+        </div>
+
+        <div class="p-5 bg-white dark:bg-[#1c222e] rounded-xl border">
+          <h4 class="font-bold mb-2">Веб-серверлер</h4>
+          <p class="text-sm text-[#606e8a] dark:text-gray-400">
+            Apache, Nginx және HTTP сұраныстарды өңдеу.
+          </p>
+        </div>
+
+        <div class="p-5 bg-white dark:bg-[#1c222e] rounded-xl border">
+          <h4 class="font-bold mb-2">Ойын серверлері</h4>
+          <p class="text-sm text-[#606e8a] dark:text-gray-400">
+            Multiplayer серверлер, latency және өнімділік.
+          </p>
+        </div>
+
+        <div class="p-5 bg-white dark:bg-[#1c222e] rounded-xl border">
+          <h4 class="font-bold mb-2">Видео серверлер</h4>
+          <p class="text-sm text-[#606e8a] dark:text-gray-400">
+            Бейнебақылау және стриминг жүйелері.
+          </p>
+        </div>
+
+        <div class="p-5 bg-white dark:bg-[#1c222e] rounded-xl border">
+          <h4 class="font-bold mb-2">Пошта және FTP</h4>
+          <p class="text-sm text-[#606e8a] dark:text-gray-400">
+            SMTP, IMAP және FTP арқылы файл алмасу.
+          </p>
+        </div>
+
+        <div class="p-5 bg-white dark:bg-[#1c222e] rounded-xl border">
+          <h4 class="font-bold mb-2">DNS сервері</h4>
+          <p class="text-sm text-[#606e8a] dark:text-gray-400">
+            Домендік атаулар және IP адрестер.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </div>
 </section>
-<!-- Objectives Grid -->
-<section class="flex flex-col gap-6 py-6">
-<div class="flex flex-col gap-3">
-<h3 class="text-[#111318] dark:text-white tracking-tight text-2xl font-bold leading-tight">
-                            Зерттелетін міндеттер мен тақырыптар
-                        </h3>
-<p class="text-[#606e8a] dark:text-gray-400 text-base font-normal leading-normal max-w-2xl">
-                            Практика барысында студент келесі серверлік технологиялар мен жүйелерді жан-жақты қарастырады:
-                        </p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-<!-- Card 1 -->
-<div class="flex flex-1 gap-4 rounded-xl border border-[#dbdfe6] dark:border-gray-800 bg-white dark:bg-[#1c222e] p-5 flex-col hover:shadow-md transition-shadow">
-<div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-[28px]">storage</span>
-</div>
-<div class="flex flex-col gap-2">
-<h4 class="text-[#111318] dark:text-white text-lg font-bold leading-tight">Сервер түрлері</h4>
-<p class="text-[#606e8a] dark:text-gray-400 text-sm font-normal leading-relaxed">Қазіргі заманғы серверлердің негізгі түрлері, физикалық құрылымы және аппараттық қамтамасыз ету ерекшеліктері.</p>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="flex flex-1 gap-4 rounded-xl border border-[#dbdfe6] dark:border-gray-800 bg-white dark:bg-[#1c222e] p-5 flex-col hover:shadow-md transition-shadow">
-<div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-[28px]">public</span>
-</div>
-<div class="flex flex-col gap-2">
-<h4 class="text-[#111318] dark:text-white text-lg font-bold leading-tight">Веб-серверлер</h4>
-<p class="text-[#606e8a] dark:text-gray-400 text-sm font-normal leading-relaxed">Веб-серверлердің (Apache, Nginx) жұмыс істеу принципі, HTTP сұраныстарды өңдеу және артықшылықтары.</p>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="flex flex-1 gap-4 rounded-xl border border-[#dbdfe6] dark:border-gray-800 bg-white dark:bg-[#1c222e] p-5 flex-col hover:shadow-md transition-shadow">
-<div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-[28px]">sports_esports</span>
-</div>
-<div class="flex flex-col gap-2">
-<h4 class="text-[#111318] dark:text-white text-lg font-bold leading-tight">Ойын серверлері</h4>
-<p class="text-[#606e8a] dark:text-gray-400 text-sm font-normal leading-relaxed">Мультиплеер ойындарына арналған серверлерді құру, кідірістерді (latency) азайту және артықшылықтары мен кемшіліктері.</p>
-</div>
-</div>
-<!-- Card 4 -->
-<div class="flex flex-1 gap-4 rounded-xl border border-[#dbdfe6] dark:border-gray-800 bg-white dark:bg-[#1c222e] p-5 flex-col hover:shadow-md transition-shadow">
-<div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-[28px]">videocam</span>
-</div>
-<div class="flex flex-col gap-2">
-<h4 class="text-[#111318] dark:text-white text-lg font-bold leading-tight">Видео-серверлер</h4>
-<p class="text-[#606e8a] dark:text-gray-400 text-sm font-normal leading-relaxed">Бейнебақылау және стриминг жүйелеріне арналған серверлер, деректерді сығымдау және сақтау көлемін басқару.</p>
-</div>
-</div>
-<!-- Card 5 -->
-<div class="flex flex-1 gap-4 rounded-xl border border-[#dbdfe6] dark:border-gray-800 bg-white dark:bg-[#1c222e] p-5 flex-col hover:shadow-md transition-shadow">
-<div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-[28px]">mail_outline</span>
-</div>
-<div class="flex flex-col gap-2">
-<h4 class="text-[#111318] dark:text-white text-lg font-bold leading-tight">Пошта және FTP</h4>
-<p class="text-[#606e8a] dark:text-gray-400 text-sm font-normal leading-relaxed">Корпоративтік пошта серверлерін (SMTP/IMAP) баптау және FTP хаттамасы арқылы файл алмасуды ұйымдастыру.</p>
-</div>
-</div>
-<!-- Card 6 -->
-<div class="flex flex-1 gap-4 rounded-xl border border-[#dbdfe6] dark:border-gray-800 bg-white dark:bg-[#1c222e] p-5 flex-col hover:shadow-md transition-shadow">
-<div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-[28px]">router</span>
-</div>
-<div class="flex flex-col gap-2">
-<h4 class="text-[#111318] dark:text-white text-lg font-bold leading-tight">DNS сервері</h4>
-<p class="text-[#606e8a] dark:text-gray-400 text-sm font-normal leading-relaxed">Домендік атаулар жүйесін (DNS) орнату, аймақтарды (zones) басқару және желілік атауларды шешу.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="flex flex-col items-center justify-center gap-4 py-8 mt-4 border-t border-[#dbdfe6] dark:border-gray-800 text-center">
-<p class="text-[#606e8a] dark:text-gray-500 text-sm font-normal leading-normal">
-                        © 2023 Студенттік практикалық жұмыс есебі
-                    </p>
-<div class="flex gap-4">
-<span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs text-[#606e8a] dark:text-gray-400">Топ: Ақпараттық жүйелер</span>
-<span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs text-[#606e8a] dark:text-gray-400">Жетекші: Ахметов Б.А.</span>
-</div>
-</footer>
-</div>
-</main>
-</div>
-</body></html>
